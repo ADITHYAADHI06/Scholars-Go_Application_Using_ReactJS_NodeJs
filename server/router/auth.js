@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require('bcryptjs');
+
 
 require("../db/conn");
 const User = require("../model/userSchema");
@@ -53,16 +55,22 @@ router.post("/register", async(req, res) => {
        
     if (checkUserExist) {
           return res.json("email already exist");
-         }
+         }else if(password!==cpassword){
+              console.log("password not macthing");
+         }else{
+          const user = new User({ name, email, phone, work, password, cpassword });
+
+         //! middleWare pre("save",callback) 
+
+        const saveuser= await user.save();
+         if(saveuser){
+           res.json(user);
+         }else{
+           res.json("user regisation error");
+         } 
+       }
   
-    const user = new User({ name, email, phone, work, password, cpassword });
-  
-       const saveuser= await user.save();
-       if(saveuser){
-            res.json(user);
-       }else{
-            res.json("user regisation error");
-          } 
+    
 
   } catch (error) {
     console.log(error);
@@ -71,5 +79,36 @@ router.post("/register", async(req, res) => {
 });
 
 
+router.post("/signin", async(req, res) => {
+try {
+    
+  const {email, password}=req.body;
+  // ? console.log(email);
+
+  if(!email || !password)
+{
+  console.log(" login Error ");
+}
+     
+    const userLogin = await User.findOne({email:email});
+    console.log(userLogin.email);
+
+const passwordMacth= await bcrypt.compare(password,userLogin.password)
+console.log(passwordMacth);
+
+
+    if(userLogin.email===email && passwordMacth ) 
+{
+  console.log("login sucessfull");
+
+}else
+{
+  console.log("invalid login");
+}
+} catch (error) {
+  console.log(error);
+}
+
+});
 
 module.exports = router;
