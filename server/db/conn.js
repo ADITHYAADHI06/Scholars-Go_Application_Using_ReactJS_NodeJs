@@ -9,7 +9,7 @@ mongoose
     useNewUrlParser: true,
   })
   .then(() => {
-    console.log("hi hello");
+    console.log("db connected");
   })
   .catch((err) => {
     console.log(err);

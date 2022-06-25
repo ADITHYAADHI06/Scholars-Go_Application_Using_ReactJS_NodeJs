@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 
 // const User = require("./model/userSchema ");
 
-// ! this middleware is get the Data from user. it ocnver json data
+// ! this middleware is get the Data from user. it convert data to json data
 app.use(express.json());
 
 app.use(require("./router/auth"));

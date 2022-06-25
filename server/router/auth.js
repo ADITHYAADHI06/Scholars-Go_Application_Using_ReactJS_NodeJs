@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-
+const jwt = require('jsonwebtoken');
 
 require("../db/conn");
 const User = require("../model/userSchema");
@@ -63,6 +63,7 @@ router.post("/register", async(req, res) => {
          //! middleWare pre("save",callback) 
 
         const saveuser= await user.save();
+
          if(saveuser){
            res.json(user);
          }else{
@@ -93,18 +94,21 @@ try {
     const userLogin = await User.findOne({email:email});
     console.log(userLogin.email);
 
-const passwordMacth= await bcrypt.compare(password,userLogin.password)
-console.log(passwordMacth);
+        if(userLogin){
+            const passwordMacth= await bcrypt.compare(password,userLogin.password)
+            console.log(passwordMacth);
+  
+               const token= await userLogin.generateAuthToken();
+               console.log(token);
 
-
-    if(userLogin.email===email && passwordMacth ) 
-{
-  console.log("login sucessfull");
-
-}else
-{
-  console.log("invalid login");
-}
+               if(userLogin.email===email && passwordMacth ) 
+               {
+                 console.log("login sucessfull");
+               }else
+               {
+                 console.log("invalid login");
+               }       
+           }
 } catch (error) {
   console.log(error);
 }

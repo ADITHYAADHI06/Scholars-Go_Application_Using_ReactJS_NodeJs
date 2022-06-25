@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+*{
+  margin:0; 
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.logo{
+width: 130px;
+height: 55px;
+}
+.nav-link {
+  color: #bfbfbf !important;
+  margin-left: 15px;
+letter-spacing: 2px; 
+}
+
+.Navbr{
+  box-shadow: -1px 9px 4px -4px rgba(0,0,0,0.47);
+-webkit-box-shadow: -1px 9px 4px -4px rgba(0,0,0,0.47);
+-moz-box-shadow: -1px 9px 4px -4px rgba(0,0,0,0.47);
+}
+
+
+/* sign up Page */
+.conatin{
+width: 100%;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+
+.signup-box{
+  background-color: white;
+  border-radius: 50px;
+  box-shadow: 6px 5px 10px 3px #262626cd !important;
+/* background-color: rgb(208, 153, 153); */
+}
+
+.signup-box img{
+  width: 220px;
+ object-fit: contain;
+}
+.formGroup{
+  display: flex;
+}
+.icon{
+  padding-top: 5px;
+}
+.form-control{
+   background-color: transparent !important;
+   outline: none !important;
+   border: none !important;
+   border-bottom: 1px solid #737373 !important;
+   border-radius: 0 !important;
+}
+.form-control::placeholder{
+  font-size: 13px !important;
+}
+input:focus , input:active {
+  border: none !important;
+  outline: none !important;
+}
+.icon{
+  font-size: 10px !important;
+}
+
+.btn1 {
+  background: #3498db !important;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9) !important ;
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9) !important ;
+  background-image: -o-linear-gradient(top, #3498db, #2980b9) !important ;
+  background-image: linear-gradient(to bottom, #3498db, #2980b9) !important ;
+  -webkit-border-radius: 5 !important ;
+  -moz-border-radius: 5 !important ;
+  border-radius: 5px !important ;
+  font-family: Arial !important ;
+  color: #f2f2f2 !important ;
+  font-size: 15px !important ;
+  padding: 8px 15px 8px 15px !important ;
+  text-decoration: none !important ;
+  border: none !important;
+}
+
+.btn1:hover {
+  background: #3cb0fd !important ;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db) !important ;
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db) !important ;
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db) !important ;
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db) !important ;
+  text-decoration: none !important ;
+}
