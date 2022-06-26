@@ -8,6 +8,10 @@
 
 }
 
+
+/* ======================
+ NAVBAR
+========================= */
 .logo{
 width: 130px;
 height: 55px;
@@ -25,7 +29,9 @@ letter-spacing: 2px;
 }
 
 
-/* sign up Page */
+/* ======================
+ REGISTER PAGE
+========================= */
 .conatin{
 width: 100%;
 display:flex;
@@ -34,12 +40,10 @@ align-items:center;
 
 }
 
-
 .signup-box{
   background-color: white;
   border-radius: 50px;
   box-shadow: 6px 5px 10px 3px #262626cd !important;
-/* background-color: rgb(208, 153, 153); */
 }
 
 .signup-box img{
@@ -71,8 +75,8 @@ input:focus , input:active {
 }
 
 .btn1 {
-  background: #3498db !important;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9) !important ;
+  background: #3cb1ff !important;
+  background-image: -webkit-linear-gradient(top, #3da7ee, #1996ea) !important ;
   background-image: -moz-linear-gradient(top, #3498db, #2980b9) !important ;
   background-image: -o-linear-gradient(top, #3498db, #2980b9) !important ;
   background-image: linear-gradient(to bottom, #3498db, #2980b9) !important ;
@@ -81,8 +85,8 @@ input:focus , input:active {
   border-radius: 5px !important ;
   font-family: Arial !important ;
   color: #f2f2f2 !important ;
-  font-size: 15px !important ;
-  padding: 8px 15px 8px 15px !important ;
+  font-size: 13px !important ;
+  padding:8px 15px 8px 15px !important ;
   text-decoration: none !important ;
   border: none !important;
 }
@@ -94,4 +98,62 @@ input:focus , input:active {
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db) !important ;
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db) !important ;
   text-decoration: none !important ;
+}
+
+
+
+/* ======================
+ NAVBAR
+========================= */
+
+.contact-info_item{
+  box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+  -webkit-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+  -moz-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+  font-size: 15px;
+  border-radius: 20px;
+  padding: 10px 12px;
+  color: rgb(0, 0, 0);
+}
+.contact-info_item img{
+  height: 50px;
+  width: 50px;
+}
+
+.contact-info-form{
+  box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+  -webkit-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+  -moz-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+}
+.contact-info-form .form-control{
+  border: 1px solid #59595982 !important;
+  border-radius: 10px !important;
+}
+
+/* ======================
+ NAVBAR
+========================= */
+
+/* .user-profile{
+  
+} */
+.user-profile{
+  max-width: 900px;
+  box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+  -webkit-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+  -moz-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
+
+}
+.profile-head{
+  width: max-content;
+}
+.user_img{
+  margin: 10px 50px;
+  width: 150px;
+  border-radius: 15px;
+}
+
+.margin{
+  margin-top: 29px !important;
+  margin-bottom: 25px !important;
 }
