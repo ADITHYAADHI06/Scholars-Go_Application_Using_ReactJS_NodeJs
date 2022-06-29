@@ -41,31 +41,31 @@ const Contact = () => {
             <h2>Get In Touch</h2>
 
             <form>
-              <div class="d-flex mt-4  justify-content-between">
+              <div className="d-flex mt-4  justify-content-between">
                 <input
                   type="text"
-                  class="form-control me-2"
+                  className="form-control me-2"
                   id="exampleInputName"
                   aria-describedby="NameHelp"
                   placeholder="Your Name"
                 />
                 <input
                   type="email"
-                  class="form-control me-2"
+                  className="form-control me-2"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Your Email"
                 />
                 <input
                   type="number"
-                  class="form-control"
+                  className="form-control"
                   id="exampleInputPhonenumber1"
                   placeholder="Your Phone Number"
                 />
               </div>
-              <div class="textarea mt-4">
+              <div className="textarea mt-4">
                 <textarea
-                  class="form-control"
+                  className="form-control"
                   placeholder="Masseage"
                   id="floatingTextarea2"
                   cols={5}
@@ -73,7 +73,7 @@ const Contact = () => {
                 />
               </div>
 
-              <button type="submit" class="btn btn-primary mt-4">
+              <button type="submit" className="btn btn-primary mt-4">
                 Submit
               </button>
             </form>

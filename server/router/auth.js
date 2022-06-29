@@ -1,15 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 require("../db/conn");
 const User = require("../model/userSchema");
 
-
-
 router.get("/", (req, res) => {});
-
 
 // ! promise
 // router.post("/register", (req, res) => {
@@ -38,81 +35,73 @@ router.get("/", (req, res) => {});
 //     .catch((e) => {
 //       console.log(e);
 //     })
-   
+
 // });
 
 //! async-await method
 
-router.post("/register", async(req, res) => {
+router.post("/register", async (req, res) => {
   try {
     const { name, email, phone, work, password, cpassword } = req.body;
 
     if (!name || !email || !phone || !work || !password || !cpassword) {
       return res.send("fill out fully");
     }
-  
-    const checkUserExist= await User.findOne({ email: email });
-       
+
+    const checkUserExist = await User.findOne({ email: email });
+
     if (checkUserExist) {
-          return res.json("email already exist");
-         }else if(password!==cpassword){
-              console.log("password not macthing");
-         }else{
-          const user = new User({ name, email, phone, work, password, cpassword });
+      return res.status(422).json({ error: "email already exist" });
+    } else if (password !== cpassword) {
+      return res.status(422).json({ error: "password not macthing" });
+    } else {
+      const user = new User({ name, email, phone, work, password, cpassword });
 
-         //! middleWare pre("save",callback) 
+      console.log(user);
 
-        const saveuser= await user.save();
+      //! middleWare pre("save",callback)
+      const saveuser = await user.save();
+      res.status(201).json({ messgage: "user registed successfully" });
 
-         if(saveuser){
-           res.json(user);
-         }else{
-           res.json("user regisation error");
-         } 
-       }
-  
-    
-
+      if (saveuser) {
+        res.json(user);
+      } else {
+        res.json("user regisation error");
+      }
+    }
   } catch (error) {
     console.log(error);
   }
-   
 });
 
+router.post("/signin", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    // ? console.log(email);
 
-router.post("/signin", async(req, res) => {
-try {
-    
-  const {email, password}=req.body;
-  // ? console.log(email);
+    if (!email || !password) {
+      return res.status(400).json({ error: "plzz fill data" });
+    }
 
-  if(!email || !password)
-{
-  console.log(" login Error ");
-}
-     
-    const userLogin = await User.findOne({email:email});
-    console.log(userLogin.email);
+    const userLogin = await User.findOne({ email: email });
+    // console.log(userLogin.email);
 
-        if(userLogin){
-            const passwordMacth= await bcrypt.compare(password,userLogin.password)
-            console.log(passwordMacth);
-  
-               const token= await userLogin.generateAuthToken();
-               console.log(token);
+    if (userLogin) {
+      const passwordMacth = await bcrypt.compare(password, userLogin.password);
+      // console.log(passwordMacth);
 
-               if(userLogin.email===email && passwordMacth ) 
-               {
-                 console.log("login sucessfull");
-               }else
-               {
-                 console.log("invalid login");
-               }       
-           }
-} catch (error) {
-  console.log(error);
-}
+      const token = await userLogin.generateAuthToken();
+      // console.log(token);
 
+      if (userLogin.email === email && passwordMacth) {
+        return res.json({ message: "login sucessfull" });
+      } else {
+        return res.status(400).json({ error: "invalid login" });
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;

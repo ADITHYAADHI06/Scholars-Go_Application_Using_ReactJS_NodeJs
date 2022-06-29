@@ -1,11 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../App.css";
 import signup from "./images/Chat_PNG.png";
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const loginUser = async (e) => {
+    e.preventDefault();
+    console.log(email);
+    console.log(password);
+    // we are sending the data to backend(to signin route)
+    const res = await fetch("/signin", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
+      }),
+    });
+    // console.log(res);
+    // console.log(res);
+    // res in pending state we can get that data in by using res.json();
+
+    const data = await res.json();
+    console.log(res.status);
+
+    if (res.status === 400 || !data) {
+      window.alert("Invalid creadentials");
+    } else {
+      window.alert(" login successfull ");
+      navigate("/");
+    }
+  };
   return (
     <div className="Login">
       <div className="row conatin">
@@ -28,27 +62,40 @@ const Login = () => {
 
               <div className="col-md-6 col-12">
                 <h3 className="mb-3">SIGN IN</h3>
-                <form>
-                  <div class="mb-2 formGroup">
+                <form method="POST">
+                  <div className="mb-2 formGroup">
                     <label for="Email" className="icon">
                       <EmailIcon />
                     </label>
                     <input
                       type="email"
-                      class="form-control "
+                      className="form-control "
+                      value={email}
+                      name="email"
+                      onChange={(e) => {
+                        console.log(e.target.value);
+                        setEmail(e.target.value);
+                      }}
                       id="exampleInputEmail1"
                       aria-describedby="emailHelp"
                       placeholder="Your Email"
                     />
                   </div>
 
-                  <div class="mb-2 formGroup">
+                  <div className="mb-2 formGroup">
                     <label for="password" className="icon">
                       <LockIcon />
                     </label>
                     <input
                       type="password"
-                      class="form-control"
+                      name="password"
+                      value={password}
+                      onChange={(e) => {
+                        console.log(e.target.value);
+
+                        setPassword(e.target.value);
+                      }}
+                      className="form-control"
                       id="exampleInputPassword1"
                       placeholder="Password"
                     />
@@ -59,7 +106,8 @@ const Login = () => {
                       value="Log in"
                       type="submit"
                       name="submit"
-                      class="ms-2 btn1"
+                      onClick={loginUser}
+                      className="ms-2 btn1"
                     />
                   </div>
                 </form>

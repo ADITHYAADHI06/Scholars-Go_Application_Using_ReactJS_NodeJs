@@ -19,7 +19,7 @@ const Home = () => {
           blogger. A Full stack Developer, content creater and blogger
         </p>
         <div>
-          <a href="#" class="btn hireme-btn">
+          <a href="#" className="btn hireme-btn">
             Contact us
           </a>
         </div>

@@ -42,7 +42,7 @@ const About = () => {
               </div>
             </div>
             {/* <div className="col-md-2 ">
-              <span class="badge rounded-5 bg-success ms-5 py-2">User</span>
+              <span className="badge rounded-5 bg-success ms-5 py-2">User</span>
             </div> */}
           </div>
         </form>

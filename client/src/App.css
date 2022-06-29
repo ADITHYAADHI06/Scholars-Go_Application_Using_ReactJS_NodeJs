@@ -134,9 +134,7 @@ input:focus , input:active {
  NAVBAR
 ========================= */
 
-/* .user-profile{
-  
-} */
+
 .user-profile{
   max-width: 900px;
   box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
@@ -157,3 +155,41 @@ input:focus , input:active {
   margin-top: 29px !important;
   margin-bottom: 25px !important;
 }
+
+
+/* ======================
+ERROR PAGE
+========================= */
+
+  .NotFound{
+    widows: 100%;
+    height: 80vh;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+  }
+  .NotFound img{
+            width: 500px;      
+  }
+
+  .Go-back-div{
+    margin-top: 20px;
+    margin-left: -40px;
+    text-align: center;
+  }
+  .GO-BACK{
+    background: #3cb1ff !important;
+    background-image: -webkit-linear-gradient(top, #3da7ee, #1996ea) !important ;
+    background-image: -moz-linear-gradient(top, #3498db, #2980b9) !important ;
+    background-image: -o-linear-gradient(top, #3498db, #2980b9) !important ;
+    background-image: linear-gradient(to bottom, #3498db, #2980b9) !important ;
+    -webkit-border-radius: 5 !important ;
+    -moz-border-radius: 5 !important ;
+    border-radius: 5px !important ;
+    font-family: Arial !important ;
+    color: #f2f2f2 !important ;
+    font-size: 13px !important ;
+    padding: 12px 25px 12px 25px !important ;
+    text-decoration: none !important ;
+    border: none !important;
+  }
