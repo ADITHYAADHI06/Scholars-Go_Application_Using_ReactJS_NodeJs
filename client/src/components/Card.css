@@ -1,0 +1,12 @@
+.card{
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card img{
+ min-height: 150px;
+ min-height: 250px;
+border-top-left-radius:12px ;
+border-top-right-radius:12px ;
+
+}
