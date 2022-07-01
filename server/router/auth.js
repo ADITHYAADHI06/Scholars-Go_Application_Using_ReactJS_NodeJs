@@ -2,9 +2,11 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const authenticate = require("../middleware/authenticate");
 
 require("../db/conn");
 const User = require("../model/userSchema");
+const { ConnectionStates } = require("mongoose");
 
 router.get("/", (req, res) => {});
 
@@ -92,6 +94,10 @@ router.post("/signin", async (req, res) => {
 
       const token = await userLogin.generateAuthToken();
       // console.log(token);
+      res.cookie("jwtoken", token, {
+        expires: new Date(Date.now() + 25892000000),
+        httpOnly: true,
+      });
 
       if (userLogin.email === email && passwordMacth) {
         return res.json({ message: "login sucessfull" });
@@ -102,6 +108,12 @@ router.post("/signin", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+});
+
+// creating about Page
+router.get("/about", authenticate, (req, res) => {
+  // console.log(req.rootUser);
+  res.send(req.rootUser);
 });
 
 module.exports = router;

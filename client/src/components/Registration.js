@@ -28,8 +28,7 @@ const Registration = () => {
     // console.log(e);
     name = e.target.name;
     value = e.target.value;
-    // console.log(name);
-    // console.log(value);
+
     setuser({ ...user, [name]: value });
   };
 

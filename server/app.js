@@ -1,8 +1,10 @@
 const dotenv = require("dotenv");
 const { json } = require("express");
-const express = require("express");
 const { default: mongoose } = require("mongoose");
+const express = require("express");
 const app = express();
+const cookieParser = require("cookie-parser");
+app.use(cookieParser());
 require("./db/conn");
 dotenv.config({ path: "./config.env" });
 
@@ -19,9 +21,9 @@ app.get("/", (req, res) => {
   res.send("hi home page");
 });
 
-app.get("/about", (req, res) => {
-  res.send("hi about page");
-});
+// app.get("/about", (req, res) => {
+//   res.send("hi about page");
+// });
 app.get("/contact", (req, res) => {
   res.send("hi conact page");
 });

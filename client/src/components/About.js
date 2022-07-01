@@ -1,40 +1,76 @@
-import React from "react";
+import React, { useEffect,useState } from "react";
 import profile_pic from "./images/profile_pic.jpeg";
+import d_Userpic from "./images/D_userPic.jpg";
+
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
+
+  const [userData, setUserData] = useState({});
+
+  const callAboutPage = async () => {
+    try {
+      const res = await fetch("/about", {
+        method: "GET",
+        headers: {
+          // to set that application should accept json
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        // we are writing include because the cookie has to send to backend
+        //  properly so that we are using that
+      });
+      //  we get the res
+
+      const data = await res.json();
+            // console.log(res);
+      setUserData(data);
+    } catch (e) {
+      console.log(e);
+      navigate("/Login");
+    }
+  };
+
+  useEffect(() => {
+    callAboutPage();
+  }, []);
+
   return (
     <>
       <div className="container d-flex justify-content-center">
-        <form method="">
+        <form method="GET">
           <div className="row user-profile margin p-5">
             <div className="col-md-5 ps-0">
-              <img src={profile_pic} className="user_img" alt="" />
+              <img src= {userData.name==="ADITHYA SHETTY"? profile_pic:d_Userpic} className="user_img" alt="" />
             </div>
             <div className="col-md-6">
               <div className="profile-head">
-                <h5>adithya shetty</h5>
-                <h6>web developer</h6>
+                <h5>{userData.name}</h5>
+                <h6>{userData.work}</h6>
+
                 <p className="profile-rating mt-3 mb-5">
-                  RANKINGS: <span>1/10</span>
+                  RANKINGS : <span>1/10</span>
                 </p>
 
                 <div>
-                  <h5 className="about_heading">About</h5>
+                  <h5 className="about_heading">ABOUT</h5>
                   <div className="Data">
                     <div className="row">
                       <div className="col-md-5">
-                        <p>User id:</p>
-                        <p>Name:</p>
-                        <p>Email:</p>
-                        <p>Profession:</p>
-                        <p>Phone number:</p>
+                        <p>User id :</p>
+                        <p>Name :</p>
+                        <p>Email :</p>
+                        <p>Profession :</p>
+                        <p>Phone number :</p>
                       </div>
                       <div className="col-md-6">
-                        <p>#23hfh54236hhj4r44</p>
-                        <p>Adithya shetty</p>
-                        <p>adishetty102@gmail.com</p>
-                        <p>Web developer</p>
-                        <p>+91 8496952366</p>
+                        <p>{userData._id}</p>
+                        <p>{userData.name}</p>
+                        <p>{userData.email}</p>
+                        <p>{userData.work}</p>
+                        <p>{userData.phone}</p>
                       </div>
                     </div>
                   </div>
