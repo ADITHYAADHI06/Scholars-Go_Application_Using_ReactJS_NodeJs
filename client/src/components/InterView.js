@@ -1,29 +1,10 @@
 import React from 'react'
 import "./Matrial.css"
+import interView_latest from "./InterView_latest"
 
 
 
-const Interview=[{
-  id:1,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-  name:"Most Importent Interview Questions",
-  discription:"Top most 40 importent questions",
-},{
-id:2,
-url:`https://www.python-faq.com/2016/11/50-python-interview-questions-answers.html`,
-name:"Most Importent Interview Questions-2",
-discription:"Importent questions for Python Programming",
-},{
-id:3,
-url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-name:"Python Basic to Advanced ",
-discription:"Python course Zero to Master",
-},{
-id:4,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-  name:"Most Importent Interview Questions-3",
-  discription:"Complate Python Questions With Answers",
-},]
+
 
 const InterView = () => {
   return (
@@ -40,9 +21,9 @@ const InterView = () => {
         <h4 className='mt-5'> Interview Questions</h4>
              <div>
              {
-              Interview.map((curelem)=>{
+              interView_latest.map((curelem)=>{
               
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                return (   <h5 className='my-4' key={curelem.id}>👉 Placements {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
               })
              }
 

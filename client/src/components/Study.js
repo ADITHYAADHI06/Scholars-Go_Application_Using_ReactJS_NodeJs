@@ -1,14 +1,19 @@
-import React from 'react'
+import React , {useState,useEffect} from 'react'
 import Card from "./Card"
 import DataBanner from "./images/DATA_BANNER.jpg"
 import CssBanner from "./images/CSS_BANNER.jpg"
 import PythonBanner from "./images/PYTHON_BANNER.jpg"
 import ApptitudeBanner from "./images/APPTITUDE_BANNER.png"
 import JavaBanner from "./images/JAVA_BANNER.jpg"
-import WEB3Banner from "./images/WEB3.0_BANNER.avif"
+import InterViewBanner from "./images/WEB3.0_BANNER.avif"
+
+import { useNavigate } from "react-router-dom";
 
 
 const Study = () => {
+
+  const navigate = useNavigate();
+
  
   const study_matrials=[
     {
@@ -48,11 +53,44 @@ const Study = () => {
     {
       id:6,
       Name: "Future Web 3.0",
-      img:WEB3Banner,
-      url:`/Web3`
+      img:InterViewBanner,
+      url:`/Interview_special`
     },
    
   ]
+
+
+  const [userData, setUserData] = useState({});
+
+  const callAboutPage = async () => {
+    try {
+      // console.log(interView_latest[0].name);
+
+      const res = await fetch("/study", {
+        method: "GET",
+        headers: {
+          // to set that application should accept json
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        // we are writing include because the cookie has to send to backend
+        //  properly so that we are using that
+      });
+      //  we get the res
+
+      const data = await res.json();
+            // console.log(res);
+      setUserData(data);
+    } catch (e) {
+      // console.log(e);
+      navigate("/Login");
+    }
+  };
+
+  useEffect(() => {
+    callAboutPage();
+  }, []);
 
 
   return (
@@ -67,9 +105,7 @@ const Study = () => {
 
   }
        
-    
-
-    
+  
       </div>
     </div>
     </>

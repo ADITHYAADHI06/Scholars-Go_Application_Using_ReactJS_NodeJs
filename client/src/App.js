@@ -40,7 +40,7 @@ function App() {
 
         <Route path="/Python" element={<Python />}></Route>
         <Route path="/Css" element={<Css />}></Route>
-        <Route path="/InterView" element={<InterView />}></Route>
+        <Route path="/Interview_special" element={<InterView />}></Route>
         <Route path="/Apptitude" element={<Apptitude />}></Route>
         <Route path="/Java" element={<Java />}></Route>
         <Route path="/Data" element={<Data />}></Route>

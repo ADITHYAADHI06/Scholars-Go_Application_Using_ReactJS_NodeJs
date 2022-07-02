@@ -116,4 +116,9 @@ router.get("/about", authenticate, (req, res) => {
   res.send(req.rootUser);
 });
 
+// creating about Page
+router.get("/study", authenticate, (req, res) => {
+  res.send(req.rootUser);      
+});
+
 module.exports = router;
