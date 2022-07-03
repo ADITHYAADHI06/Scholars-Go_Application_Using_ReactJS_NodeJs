@@ -62,7 +62,7 @@ const Python = () => {
              {
               JavaInterView.map((curelem)=>{
               
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                return (   <h5 className='my-4' key={curelem.id}>👉 Interview {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
               })
              }
 

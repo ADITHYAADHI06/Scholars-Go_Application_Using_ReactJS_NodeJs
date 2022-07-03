@@ -1,11 +1,11 @@
 import React , {useState,useEffect} from 'react'
 import Card from "./Card"
-import DataBanner from "./images/DATA_BANNER.jpg"
-import CssBanner from "./images/CSS_BANNER.jpg"
+import DSABanner from "./images/Dsa_banner.jpg"
+import JavaScriptBanner from "./images/JavaScript.png"
 import PythonBanner from "./images/PYTHON_BANNER.jpg"
 import ApptitudeBanner from "./images/APPTITUDE_BANNER.png"
 import JavaBanner from "./images/JAVA_BANNER.jpg"
-import InterViewBanner from "./images/WEB3.0_BANNER.avif"
+import InterViewBanner from "./images/interview_pic.jpg"
 
 import { useNavigate } from "react-router-dom";
 
@@ -17,45 +17,52 @@ const Study = () => {
  
   const study_matrials=[
     {
-      id:1,
-      Name: "Data Structures And Alogorithum",
-      img:DataBanner,
-      url:`/Data`
+      id:6,
+      Name: "Future Web 3.0",
+      img:InterViewBanner,
+      url:`/study/Interview_special`
     },
+   
     {
       id:2,
       Name: "Apptitude Questions",
       img:ApptitudeBanner,
-      url:`/Apptitude`
+      url:`/study/Apptitude`
 
+    },
+    {
+      id:1,
+      Name: "Data Structures",
+      img:DSABanner,
+      url:`/study/Dsa`
     },
     {
       id:3,
       Name: "Python Programing",
       img:PythonBanner,
-      url:`/Python`
+      url:`/study/Python`
 
     } ,
+    {
+      id:5,
+      Name: "JavaScript",
+      img:JavaScriptBanner,
+      url:`/study/JavaScript`
+
+    },
+ 
+   
+    
+  
     {
       id:4,
       Name: "Java Programing",
       img:JavaBanner,
-      url:`/Java`
+      url:`/study/Java`
 
     },
-    {
-      id:5,
-      Name: "Cascading Style Sheets",
-      img:CssBanner,
-      url:`/Css`
-
-    },
-    {
-      id:6,
-      Name: "Future Web 3.0",
-      img:InterViewBanner,
-      url:`/Interview_special`
-    },
+    
+   
    
   ]
 

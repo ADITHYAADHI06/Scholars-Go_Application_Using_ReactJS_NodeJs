@@ -1,8 +1,37 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import "../App.css";
 import Contactitem from "./Contactitem";
 
 const Contact = () => {
+
+
+
+
+  const [userData, setUserData] = useState({});
+
+  const contactData = async () => {
+    try {
+      const res = await fetch("/getContactData", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      
+      });
+      //  we get the responese as res
+
+      const data = await res.json();
+            // console.log(res);
+      setUserData(data);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    contactData();
+  }, []);
+
   return (
     <div className="Contact">
       <div className="container-fluid ">
@@ -47,6 +76,7 @@ const Contact = () => {
                   className="form-control me-2"
                   id="exampleInputName"
                   aria-describedby="NameHelp"
+                  value={userData.name}
                   placeholder="Your Name"
                 />
                 <input
@@ -54,11 +84,13 @@ const Contact = () => {
                   className="form-control me-2"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
+                  value={userData.email}
                   placeholder="Your Email"
                 />
                 <input
                   type="number"
                   className="form-control"
+                  value={userData.phone}
                   id="exampleInputPhonenumber1"
                   placeholder="Your Phone Number"
                 />

@@ -1,12 +1,21 @@
 .card{
-  width: 100%;
-  border-radius: 12px;
+  width: 100% !important;
+  height: 450px !important;
+  border-radius: 12px !important;
 }
 
 .card img{
- min-height: 150px;
+
+  min-height: 150px;
  min-height: 250px;
 border-top-left-radius:12px ;
 border-top-right-radius:12px ;
 
 }
+
+/* .card-title{
+  display: inline;
+}
+.badge{
+  float:right;
+} */

@@ -121,4 +121,11 @@ router.get("/study", authenticate, (req, res) => {
   res.send(req.rootUser);      
 });
 
+
+
+router.get("/getContactData", authenticate, (req, res) => {
+  res.send(req.rootUser);      
+});
+
+
 module.exports = router;

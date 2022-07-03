@@ -3,7 +3,7 @@ import "./Matrial.css"
 
 
 
-const DataInterView=[{
+const DSAInterView=[{
   id:1,
   url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
   name:"Most Importent Interview Questions",
@@ -25,7 +25,7 @@ id:4,
   discription:"Complate Python Questions With Answers",
 },]
 
-const Data = () => {
+const DSA = () => {
   return (
     <> 
      <div className="container-fluid Matrials">
@@ -40,7 +40,7 @@ const Data = () => {
         <h4 className='mt-5'>Python Programming Interview Questions</h4>
              <div>
              {
-              DataInterView.map((curelem)=>{
+              DSAInterView.map((curelem)=>{
               
                 return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
               })
@@ -58,4 +58,4 @@ const Data = () => {
   )
 }
 
-export default Data
+export default DSA

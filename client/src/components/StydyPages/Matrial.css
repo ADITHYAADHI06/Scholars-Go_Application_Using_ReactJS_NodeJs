@@ -2,7 +2,9 @@
     max-width: 720px;
   }
 
-
+  .Matrial{
+       display: inline-block;
+  }
   .Matrials a{
     text-decoration: none;
     padding: 0 5px;

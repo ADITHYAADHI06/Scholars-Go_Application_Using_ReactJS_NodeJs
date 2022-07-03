@@ -3,12 +3,12 @@ import "./Matrial.css"
 
 const PythonSyllabus=[{
     id:1,
-    url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+    url:`https://drive.google.com/file/d/1gqJWTiqQBWsTEqu6_1oUX8txVFFq01gS/view?usp=sharing`,
     name:"Complete Python course",
     discription:"Complate Python course for Proffesionals, Developers , Students",
 },{
   id:2,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+  url:`https://drive.google.com/file/d/1gqJWTiqQBWsTEqu6_1oUX8txVFFq01gS/view?usp=sharing`,
   name:"Python for Begginers",
   discription:"Begginers friendly Python course for Students",
 },{
@@ -36,7 +36,7 @@ discription:"Importent questions for Python Programming",
 },{
 id:3,
 url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-name:"Python Basic to Advanced ",
+name:"Python Basic to Advanced course ",
 discription:"Python course Zero to Master",
 },{
 id:4,
@@ -62,7 +62,7 @@ const Python = () => {
              {
               PythonInterView.map((curelem)=>{
               
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                return (   <h5 className='my-4' key={curelem.id}>👉 Interview {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
               })
              }
 
@@ -77,7 +77,7 @@ const Python = () => {
              {
               PythonSyllabus.map((curelem)=>{
               
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url} target="_blanck">{curelem.name}</a> — {curelem.discription}</h5> );
               })
              }
               

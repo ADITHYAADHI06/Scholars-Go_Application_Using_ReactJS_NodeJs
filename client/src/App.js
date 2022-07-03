@@ -9,12 +9,12 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
 import ErrorPage from "./components/ErrorPage";
-import Java from "./components/Java"
-import Python from "./components/Python"
-import Css from "./components/Java"
-import InterView from "./components/InterView"
-import Apptitude from "./components/Apptitude"
-import Data from "./components/Data"
+import Java from "./components/StydyPages/Java"
+import Python from "./components/StydyPages/Python"
+import InterView from "./components/StydyPages/InterView"
+import Apptitude from "./components/StydyPages/Apptitude"
+import Dsa from "./components/StydyPages/DSA"
+import JavaScript from "./components/StydyPages/JavaScript";
 
 
 function App() {
@@ -38,12 +38,12 @@ function App() {
         <Route path="/signup" element={<Registration />}></Route>
 
 
-        <Route path="/Python" element={<Python />}></Route>
-        <Route path="/Css" element={<Css />}></Route>
-        <Route path="/Interview_special" element={<InterView />}></Route>
-        <Route path="/Apptitude" element={<Apptitude />}></Route>
-        <Route path="/Java" element={<Java />}></Route>
-        <Route path="/Data" element={<Data />}></Route>
+        <Route path="/study/Python" element={<Python />}></Route>
+        <Route path="/study/JavaScript" element={<JavaScript />}></Route>
+        <Route path="/study/Interview_special" element={<InterView />}></Route>
+        <Route path="/study/Apptitude" element={<Apptitude />}></Route>
+        <Route path="/study/Java" element={<Java />}></Route>
+        <Route path="/study/DSA" element={<Dsa />}></Route>
 
 
 

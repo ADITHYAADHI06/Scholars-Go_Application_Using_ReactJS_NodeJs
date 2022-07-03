@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Matrial.css"
 
-const PythonSyllabus=[{
+const JavaScriptSyllabus=[{
     id:1,
     url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
     name:"Complete Python course",
@@ -23,7 +23,7 @@ const PythonSyllabus=[{
     discription:"Complate Python Questions With Answers for Students.",
 },]
 
-const PythonInterView=[{
+const JavaScriptInterView=[{
   id:1,
   url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
   name:"Most Importent Interview Questions",
@@ -45,7 +45,7 @@ id:4,
   discription:"Complate Python Questions With Answers",
 },]
 
-const Python = () => {
+const JavaScript = () => {
   return (
     <> 
      <div className="container-fluid Matrials">
@@ -60,7 +60,7 @@ const Python = () => {
         <h4 className='mt-5'>Python Programming Interview Questions</h4>
              <div>
              {
-              PythonInterView.map((curelem)=>{
+              JavaScriptInterView.map((curelem)=>{
               
                 return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
               })
@@ -75,9 +75,9 @@ const Python = () => {
              <div>
 
              {
-              PythonSyllabus.map((curelem)=>{
+              JavaScriptSyllabus.map((curelem)=>{
               
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                return (   <h5 className='my-4' key={curelem.id}>👉 Interview {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
               })
              }
               
@@ -90,4 +90,4 @@ const Python = () => {
   )
 }
 
-export default Python
+export default JavaScript
