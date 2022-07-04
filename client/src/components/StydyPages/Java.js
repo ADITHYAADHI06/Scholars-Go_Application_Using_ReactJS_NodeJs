@@ -51,7 +51,7 @@ const Python = () => {
      <div className="container-fluid Matrials">
     <div className="row d-flex justify-content-center mx-auto mt-4 mb-3"> 
        <div className='col-12  col-md-11 '>
-        <h2 className='my-2 mb-5'>Java Tutorial for Beginners: Learn Core Java Programming</h2>
+        <h2 className='my-2 mb-5 Main_heading'>Java Tutorial for Beginners: Learn Core Java Programming</h2>
         <h3 className='mb-3'>What is Java Language?</h3>
         <p className='max_width'>Java is a class-based object-oriented programming language for building web and desktop applications. It is the most popular programming language and the language of choice for Android programming.</p>
         <h3 className='mb-3 mt-5'>Java Syllabus</h3>

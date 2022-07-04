@@ -18,47 +18,51 @@ const Study = () => {
   const study_matrials=[
     {
       id:6,
-      Name: "Future Web 3.0",
+      Name: "Interview Preparetions",
       img:InterViewBanner,
-      url:`/study/Interview_special`
+      url:`/study/Interview_special`,
+      des:"sfucibFEWBshk kjkdjskcsbdkj cdcbbckjb skjb bsdbjksfbwkejbfkwjebkbdsjc ekwjfbjk mcbmsdbfkewbkfb,c cm e jckbdskfjbekj"
     },
    
     {
       id:2,
       Name: "Apptitude Questions",
       img:ApptitudeBanner,
-      url:`/study/Apptitude`
+      url:`/study/Apptitude`,
+      des:"sfucibFEWBshk kjkdjskcsbdkj cdcbbckjb skjb bsdbjksfbwkejbfkwjebkbdsjc ekwjfbjk mcbmsdbfkewbkfb,c cm e jckbdskfjbekj"
 
     },
     {
       id:1,
       Name: "Data Structures",
       img:DSABanner,
-      url:`/study/Dsa`
+      url:`/study/Dsa`,
+      des:"sfucibFEWBshk kjkdjskcsbdkj cdcbbckjb skjb bsdbjksfbwkejbfkwjebkbdsjc ekwjfbjk mcbmsdbfkewbkfb,c cm e jckbdskfjbekj"
     },
     {
       id:3,
       Name: "Python Programing",
       img:PythonBanner,
-      url:`/study/Python`
+      url:`/study/Python`,
+      des:"sfucibFEWBshk kjkdjskcsbdkj cdcbbckjb skjb bsdbjksfbwkejbfkwjebkbdsjc ekwjfbjk mcbmsdbfkewbkfb,c cm e jckbdskfjbekj"
 
     } ,
     {
       id:5,
       Name: "JavaScript",
       img:JavaScriptBanner,
-      url:`/study/JavaScript`
+      url:`/study/JavaScript`,
+      des:"sfucibFEWBshk kjkdjskcsbdkj cdcbbckjb skjb bsdbjksfbwkejbfkwjebkbdsjc ekwjfbjk mcbmsdbfkewbkfb,c cm e jckbdskfjbekj"
 
     },
  
-   
-    
   
     {
       id:4,
       Name: "Java Programing",
       img:JavaBanner,
-      url:`/study/Java`
+      url:`/study/Java`,
+      des:"sfucibFEWBshk kjkdjskcsbdkj cdcbbckjb skjb bsdbjksfbwkejbfkwjebkbdsjc ekwjfbjk mcbmsdbfkewbkfb,c cm e jckbdskfjbekj"
 
     },
     
@@ -105,9 +109,9 @@ const Study = () => {
     <div className="container">
     <div className="row d-flex justify-content-center   mx-auto mb-2"> 
   {  study_matrials.map((curelem)=>{
-    const {id ,Name,img,url}=curelem;
+    const {id ,Name,img,url,des}=curelem;
 
-     return( <Card  id={id} Name={Name} img={img} url={url} /> );
+     return( <Card  id={id} Name={Name} img={img} url={url} des={des} /> );
   })
 
   }

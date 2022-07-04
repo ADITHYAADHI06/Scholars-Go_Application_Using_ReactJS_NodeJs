@@ -1,29 +1,6 @@
 import React from 'react'
 import "./Matrial.css"
-
-
-
-const DSAInterView=[{
-  id:1,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-  name:"Most Importent Interview Questions",
-  discription:"Top most 40 importent questions",
-},{
-id:2,
-url:`https://www.python-faq.com/2016/11/50-python-interview-questions-answers.html`,
-name:"Most Importent Interview Questions-2",
-discription:"Importent questions for Python Programming",
-},{
-id:3,
-url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-name:"Python Basic to Advanced ",
-discription:"Python course Zero to Master",
-},{
-id:4,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-  name:"Most Importent Interview Questions-3",
-  discription:"Complate Python Questions With Answers",
-},]
+import {DSA_concepts_wise, DSA_full_pdfs} from "./InterView_Api"
 
 const DSA = () => {
   return (
@@ -31,18 +8,34 @@ const DSA = () => {
      <div className="container-fluid Matrials">
     <div className="row d-flex justify-content-center mx-auto mt-4 mb-3"> 
        <div className='col-12  col-md-11 '>
-        <h2 className='my-2 mb-5'>Python Tutorial for Beginners: Learn Programming Basics</h2>
-        <h3 className='mb-3'>What is Python Programming Language?</h3>
-        <p className='max_width'>Python is an object-oriented programming language created by Guido Rossum in 1989. It is ideally designed for rapid prototyping of complex applications. It has interfaces to many OS system calls and libraries and is extensible to C or C++. Many large companies use the Python programming language, including NASA, Google, YouTube, BitTorrent, etc.</p>
-        <h3 className='mb-3 mt-5'>Python Syllabus</h3>
+        <h2 className='my-2 mb-5 Main_heading'>Data structures and Algorithms: Zero to Master<span className='Hand'>&#128077;</span></h2>
+        <h3 className='mb-3'>What is Data Structure and Algorithms ?</h3>
+        <p className='max_width'>Data Structures are the programmatic way of storing data so that data can be used efficiently. Almost every enterprise application uses various types of data structures in one or the other way. This tutorial will give you a great understanding on Data Structures needed to understand the complexity of enterprise level applications and need of algorithms, and data structures.</p>
 
         <div className='PDF_InterView_perspective'>
-        <h4 className='mt-5'>Python Programming Interview Questions</h4>
+        <h3 className='mt-5 mb-4'>Data structures and Algorithms Concepts [PDF]</h3>
+        <div className='row justify-content-between mx-3'>
+             {
+              DSA_concepts_wise.map((curelem)=>{
+              
+                return (<div className='col-11 col-md-5'>
+                   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a></h5>
+                   </div>
+                    );
+              })
+             }
+
+             </div>
+        </div>
+
+
+        <div className='PDF_Full_course'>
+        <h3 className='mt-5 mb-4'>Data structures and Algorithms Full Course [PDF]</h3>
              <div>
              {
-              DSAInterView.map((curelem)=>{
+              DSA_full_pdfs.map((curelem)=>{
               
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                return (   <h5 className='my-4 mx-4' key={curelem.id}>👉 Full Course {curelem.id} <a href={curelem.url}>{curelem.name}</a></h5> );
               })
              }
 

@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 
 
-const Card = ({id ,Name,img,url}) => {
+const Card = ({id ,Name,img,url,des}) => {
   
   return (
     <>
@@ -17,7 +17,7 @@ const Card = ({id ,Name,img,url}) => {
                            <h5 className="card-title">{Name}</h5>
                            {/* <span class="badge rounded-pill bg-success">latest</span> */}
                            </div>
-                         <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                         <p className="card-text">{des}</p>
                          <NavLink to={url}  className="btn rounded-3 btn-outline-dark">Explore More</NavLink>
                </div>
          </div>
