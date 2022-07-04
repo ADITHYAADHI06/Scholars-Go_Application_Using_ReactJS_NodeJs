@@ -25,9 +25,9 @@ app.get("/", (req, res) => {
 // app.get("/about", (req, res) => {
 //   res.send("hi about page");
 // });
-app.get("/contact", (req, res) => {
-  res.send("hi conact page");
-});
+// app.get("/contact", (req, res) => {
+//   res.send("hi conact page");
+// });
 
 app.get("/signin", (req, res) => {
   res.send("hi singin page");

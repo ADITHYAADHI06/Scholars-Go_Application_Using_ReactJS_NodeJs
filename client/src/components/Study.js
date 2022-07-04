@@ -65,9 +65,7 @@ const Study = () => {
       des:"sfucibFEWBshk kjkdjskcsbdkj cdcbbckjb skjb bsdbjksfbwkejbfkwjebkbdsjc ekwjfbjk mcbmsdbfkewbkfb,c cm e jckbdskfjbekj"
 
     },
-    
-   
-   
+
   ]
 
 

@@ -4,10 +4,7 @@ import Contactitem from "./Contactitem";
 
 const Contact = () => {
 
-
-
-
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState({name:"", email:"",phone:"",message:""});
 
   const contactData = async () => {
     try {
@@ -22,15 +19,46 @@ const Contact = () => {
 
       const data = await res.json();
             // console.log(res);
-      setUserData(data);
+      setUserData({...userData, name:data.name,email:data.email,phone:data.phone});
     } catch (e) {
       console.log(e);
     }
   };
-
   useEffect(() => {
     contactData();
   }, []);
+
+
+   const inputHandlers=(e)=>{
+          const name= e.target.name;
+          const value= e.target.value;
+      setUserData({...userData, [name]:value});
+   }
+
+  //  Sending the Data to backEnd 
+
+   const SendMessage= async(e)=>{
+    const {  name,email,phone,message }=userData;
+         e.preventDefault();
+         const res =await fetch("/contact",{
+                method:"POST",
+                headers:{
+                  "Content-Type":"application/json"
+                },
+                body: JSON.stringify({
+                      name,email,phone,message
+                })
+         })
+        const data=await res.json();
+            if(!data){
+              console.log("Message not Send");
+            }else{
+                alert("message Sent");
+                setUserData({...userData, message:""});
+            }
+   
+      }
+
 
   return (
     <div className="Contact">
@@ -69,13 +97,15 @@ const Contact = () => {
           <div className="col-7 pt-4 pb-4 px-5 rounded  contact-info-form">
             <h2>Get In Touch</h2>
 
-            <form>
+            <form method="POST">
               <div className="d-flex mt-4  justify-content-between">
                 <input
                   type="text"
                   className="form-control me-2"
                   id="exampleInputName"
                   aria-describedby="NameHelp"
+                  onChange={inputHandlers}
+                  name="name"
                   value={userData.name}
                   placeholder="Your Name"
                 />
@@ -84,12 +114,16 @@ const Contact = () => {
                   className="form-control me-2"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
+                  onChange={inputHandlers}
+                  name="email"
                   value={userData.email}
                   placeholder="Your Email"
                 />
                 <input
                   type="number"
                   className="form-control"
+                  onChange={inputHandlers}
+                  name="phone"
                   value={userData.phone}
                   id="exampleInputPhonenumber1"
                   placeholder="Your Phone Number"
@@ -100,12 +134,15 @@ const Contact = () => {
                   className="form-control"
                   placeholder="Masseage"
                   id="floatingTextarea2"
+                  onChange={inputHandlers}
+                  name="message"
+                  value={userData.message}
                   cols={5}
                   rows={6}
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary mt-4">
+              <button type="submit" onClick={SendMessage} className="btn btn-primary mt-4">
                 Submit
               </button>
             </form>

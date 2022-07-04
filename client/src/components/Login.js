@@ -13,8 +13,7 @@ const Login = () => {
 
   const loginUser = async (e) => {
     e.preventDefault();
-    console.log(email);
-    console.log(password);
+ 
     // we are sending the data to backend(to signin route)
     const res = await fetch("/signin", {
       method: "POST",
