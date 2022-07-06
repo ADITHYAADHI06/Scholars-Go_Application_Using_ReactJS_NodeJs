@@ -15,6 +15,7 @@ import InterView from "./components/StydyPages/InterView"
 import Apptitude from "./components/StydyPages/Apptitude"
 import Dsa from "./components/StydyPages/DSA"
 import JavaScript from "./components/StydyPages/JavaScript";
+import Logout from "./components/Logout";
 
 
 function App() {
@@ -37,7 +38,8 @@ function App() {
 
         <Route path="/signup" element={<Registration />}></Route>
 
-
+        <Route path="/logout" element={<Logout />}></Route>
+ 
         <Route path="/study/Python" element={<Python />}></Route>
         <Route path="/study/JavaScript" element={<JavaScript />}></Route>
         <Route path="/study/Interview_special" element={<InterView />}></Route>

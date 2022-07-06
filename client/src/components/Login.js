@@ -48,6 +48,7 @@ const Login = () => {
             <div className="row d-flex justify-content-between align-items-center">
               <div className="col-md-5 text-center col-12">
                 <figure>
+            
                   <img src={signup} className=" " alt="signup" />
                 </figure>
                 <NavLink

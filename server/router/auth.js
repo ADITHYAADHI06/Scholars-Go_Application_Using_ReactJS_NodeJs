@@ -121,11 +121,18 @@ router.get("/study", authenticate, (req, res) => {
   res.send(req.rootUser);      
 });
 
+router.get("/logout", authenticate, (req, res) => {
+  // after clearing the cookie navigate to home page
+  res.clearCookie("jwtoken",{path:"/"})
+  res.status(200).send('user logout');      
+});
 
-
-router.get("/getContactData", authenticate, (req, res) => {
+router.get("/getData", authenticate, (req, res) => {
   res.send(req.rootUser);      
 });
+
+
+
 
 router.post("/contact", authenticate, async(req, res) => {
            try {

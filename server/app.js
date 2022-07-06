@@ -18,9 +18,10 @@ app.use(express.json());
 
 app.use(require("./router/auth"));
 // ! this is routing
-app.get("/", (req, res) => {
-  res.send("hi home page");
-});
+
+// app.get("/", (req, res) => {
+//   res.send("hi home page");
+// });
 
 // app.get("/about", (req, res) => {
 //   res.send("hi about page");

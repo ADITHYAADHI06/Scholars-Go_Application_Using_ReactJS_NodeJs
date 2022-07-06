@@ -11,7 +11,7 @@ const About = () => {
 
   const callAboutPage = async () => {
     try {
-      const res = await fetch("/about", {
+      const res = await fetch("/getData", {
         method: "GET",
         headers: {
           // to set that application should accept json

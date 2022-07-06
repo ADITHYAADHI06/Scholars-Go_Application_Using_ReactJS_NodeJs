@@ -8,7 +8,7 @@ const Contact = () => {
 
   const contactData = async () => {
     try {
-      const res = await fetch("/getContactData", {
+      const res = await fetch("/getData", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -18,7 +18,7 @@ const Contact = () => {
       //  we get the responese as res
 
       const data = await res.json();
-            // console.log(res);
+            console.log(data.name);
       setUserData({...userData, name:data.name,email:data.email,phone:data.phone});
     } catch (e) {
       console.log(e);
@@ -59,7 +59,7 @@ const Contact = () => {
    
       }
 
-
+      // console.log(userData);
   return (
     <div className="Contact">
       <div className="container-fluid ">

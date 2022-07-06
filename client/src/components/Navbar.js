@@ -80,6 +80,16 @@ function Navbar() {
                   Registration
                 </NavLink>
               </li>
+
+              <li className="nav-item">
+                <NavLink
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/logout"
+                >
+                  Logout
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

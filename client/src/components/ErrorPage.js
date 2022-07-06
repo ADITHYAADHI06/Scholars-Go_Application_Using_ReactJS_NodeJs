@@ -1,6 +1,8 @@
 import React from "react";
 import "../App.css";
 import errorimg from "./images/errorpage404.jpg";
+import { NavLink } from "react-router-dom";
+
 
 const ErrorPage = () => {
   return (
@@ -11,9 +13,10 @@ const ErrorPage = () => {
           <img src={errorimg} className="mt-4" alt="eror"></img>
 
           <div className="Go-back-div">
-            <a href="#" className="GO-BACK">
-              GO BACK
-            </a>
+            <NavLink  className="GO-BACK" to="/">
+                GO BACK
+            </NavLink>
+
           </div>
         </div>
       </div>
