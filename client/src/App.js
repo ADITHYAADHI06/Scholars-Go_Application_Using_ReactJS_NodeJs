@@ -16,22 +16,22 @@ import Apptitude from "./components/StydyPages/Apptitude"
 import Dsa from "./components/StydyPages/DSA"
 import JavaScript from "./components/StydyPages/JavaScript";
 import Logout from "./components/Logout";
+import { createContext, useReducer } from "react";
+import { initialState, reducer } from "./reducer/UseReducer";
 
 
-function App() {
-  return (
-    <>
-      <Navbar />
 
-      <Routes>
+//Todo: 1. ContextAPI
+export const UserContext=createContext();
+
+ export const Routing=()=>{
+  return(
+ <Routes>
         <Route exact path="/" element={<Home />}></Route>
 
         <Route path="/about" element={<About />}></Route>
 
         <Route path="/study" element={<Study />}></Route>
-
-
-
         <Route path="/contact" element={<Contact />}></Route>
 
         <Route path="/login" element={<Login />}></Route>
@@ -47,11 +47,22 @@ function App() {
         <Route path="/study/Java" element={<Java />}></Route>
         <Route path="/study/DSA" element={<Dsa />}></Route>
 
-
-
         {/*  Error Page  */}
         <Route path="*" element={<ErrorPage />} />
-      </Routes>
+  </Routes>
+  );
+}
+
+function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  // Todo: With the help of UseContext we call dispacth, when ever dispacth get called , in reducer action get trigered according to action we get playload
+
+  return (
+    <>
+    <UserContext.Provider value={{state,dispatch}}>
+      <Navbar />
+      <Routing />
+   </UserContext.Provider>
     </>
   );
 }

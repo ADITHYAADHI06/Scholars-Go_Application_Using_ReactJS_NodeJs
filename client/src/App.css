@@ -8,7 +8,6 @@
 
 }
 
-
 /* ======================
  NAVBAR
 ========================= */
@@ -162,9 +161,10 @@ ERROR PAGE
 ========================= */
 
   .NotFound{
-    widows: 100%;
+    width: 100%;
     height: 80vh;
     display:flex;
+    /* background-color: white; */
     justify-content:center;
     align-items: center;
   }

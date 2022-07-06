@@ -3,7 +3,6 @@ import "../App.css";
 import errorimg from "./images/errorpage404.jpg";
 import { NavLink } from "react-router-dom";
 
-
 const ErrorPage = () => {
   return (
     <>

@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../App.css";
 import signup from "./images/Chat_PNG.png";
 import EmailIcon from "@mui/icons-material/Email";
 import LockIcon from "@mui/icons-material/Lock";
 import { useNavigate } from "react-router-dom";
+ import {UserContext} from "../App"
 
 const Login = () => {
+  
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+
+  const {state, dispatch} = useContext(UserContext);
+
+
 
   const loginUser = async (e) => {
     e.preventDefault();
@@ -35,6 +43,11 @@ const Login = () => {
     if (res.status === 400 || !data) {
       window.alert("Invalid creadentials");
     } else {
+       dispatch({type:"USER",payload:true});
+
+// type is name for the action that is going perfrom in reducer
+// its like msg we are sending
+
       window.alert(" login successfull ");
       navigate("/");
     }

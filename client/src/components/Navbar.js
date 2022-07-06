@@ -1,10 +1,71 @@
-import React from "react";
+import React ,{useContext} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
 import logo from "./images/Logo_MERNSTACK .png";
 // import header_main from "./images/header_main.jpg";
 
+import {UserContext} from "../App"
+
+
 function Navbar() {
+  const {state, dispatch} = useContext(UserContext);
+     
+  const NavbarToggle=()=>{
+      if(state){
+        return(
+        <>
+               <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/about">About</NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/study">Study Materials</NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/contact">Contact</NavLink>
+              </li>
+
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/logout">Logout</NavLink>
+              </li>
+        </>
+        )
+      }else{
+        return(
+        <>
+            <li className="nav-item">
+              <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
+            </li>
+
+            <li className="nav-item">
+              <NavLink className="nav-link active" aria-current="page" to="/about">About</NavLink>
+            </li>
+
+           <li className="nav-item">
+             <NavLink className="nav-link active" aria-current="page" to="/study" >Study Materials</NavLink>
+           </li>
+
+           <li className="nav-item">
+             <NavLink className="nav-link active" aria-current="page" to="/contact" >Contact</NavLink>
+           </li>
+
+           <li className="nav-item">
+             <NavLink className="nav-link active" aria-current="page" to="/Login" >Login</NavLink>
+           </li>
+
+           <li className="nav-item">
+             <NavLink className="nav-link active" aria-current="page" to="/signup" >Registration</NavLink>
+           </li>
+
+  </>
+      );}
+  }
+
   return (
     <div className="Navbar">
       <nav className="navbar navbar-expand-lg py-2  navbar-light  bg-transperent Navbr">
@@ -25,71 +86,7 @@ function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <NavLink className="nav-link active" aria-current="page" to="/">
-                  Home
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/about"
-                >
-                  About
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/study"
-                >
-                  Study Materials
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/contact"
-                >
-                  Contact
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/Login"
-                >
-                  Login
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/signup"
-                >
-                  Registration
-                </NavLink>
-              </li>
-
-              <li className="nav-item">
-                <NavLink
-                  className="nav-link active"
-                  aria-current="page"
-                  to="/logout"
-                >
-                  Logout
-                </NavLink>
-              </li>
+             <NavbarToggle />
             </ul>
           </div>
         </div>

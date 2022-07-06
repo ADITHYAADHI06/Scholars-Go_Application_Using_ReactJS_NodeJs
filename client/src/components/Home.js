@@ -1,6 +1,8 @@
 import React,{useEffect,useState} from "react";
 import "./Home.css";
-import home_main from "./images/home_main1.jpg";
+// import home_main from "./images/home_main1.jpg";
+import home_main from "./images/HOME_IMG_MAIN.jpg";
+
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
