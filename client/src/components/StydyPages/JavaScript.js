@@ -2,48 +2,49 @@ import React from 'react'
 import "./Matrial.css"
 
 const JavaScriptSyllabus=[{
-    id:1,
-    url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-    name:"Complete Python course",
-    discription:"Complate Python course for Proffesionals, Developers , Students",
-},{
-  id:2,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-  name:"Python for Begginers",
-  discription:"Begginers friendly Python course for Students",
-},{
-  id:3,
-  url:`https://drive.google.com/file/d/1V3idJRHqfG7zh1WsWTXDlTpB3N1g9kl3/view?usp=sharing`,
-  name:"Python Cheat Sheet Advanced",
-  discription:"Begginers friendly Python course for Students",
-},{
-  id:4,
-    url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-    name:"Questions With Answers",
-    discription:"Complate Python Questions With Answers for Students.",
-},]
+      id:1,
+      url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+      name:"Complete Python course",
+      discription:"Complate Python course for Proffesionals, Developers , Students",
+      },{
+      id:2,
+      url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+      name:"Python for Begginers",
+      discription:"Begginers friendly Python course for Students",
+      },{
+      id:3,
+      url:`https://drive.google.com/file/d/1V3idJRHqfG7zh1WsWTXDlTpB3N1g9kl3/view?usp=sharing`,
+      name:"Python Cheat Sheet Advanced",
+      discription:"Begginers friendly Python course for Students",
+      },{
+      id:4,
+      url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+      name:"Questions With Answers",
+        discription:"Complate Python Questions With Answers for Students.",
+      },
+    ]
 
 const JavaScriptInterView=[{
-  id:1,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-  name:"Most Importent Interview Questions",
-  discription:"Top most 40 importent questions",
-},{
-id:2,
-url:`https://www.python-faq.com/2016/11/50-python-interview-questions-answers.html`,
-name:"Most Importent Interview Questions-2",
-discription:"Importent questions for Python Programming",
-},{
-id:3,
-url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-name:"Python Basic to Advanced ",
-discription:"Python course Zero to Master",
-},{
-id:4,
-  url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
-  name:"Most Importent Interview Questions-3",
-  discription:"Complate Python Questions With Answers",
-},]
+      id:1,
+      url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+      name:"Most Importent Interview Questions",
+      discription:"Top most 40 importent questions",
+      },{
+      id:2,
+      url:`https://www.python-faq.com/2016/11/50-python-interview-questions-answers.html`,
+      name:"Most Importent Interview Questions-2",
+      discription:"Importent questions for Python Programming",
+      },{
+      id:3,
+      url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+      name:"Python Basic to Advanced ",
+      discription:"Python course Zero to Master",
+      },{
+      id:4,
+      url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
+      name:"Most Importent Interview Questions-3",
+      discription:"Complate Python Questions With Answers",
+ },]
 
 const JavaScript = () => {
   return (
@@ -57,32 +58,27 @@ const JavaScript = () => {
         <h3 className='mb-3 mt-5'>Python Syllabus</h3>
 
         <div className='PDF_InterView_perspective'>
-        <h4 className='mt-5'>Python Programming Interview Questions</h4>
+         <h4 className='mt-5'>Python Programming Interview Questions</h4>
              <div>
-             {
-              JavaScriptInterView.map((curelem)=>{
-              
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
-              })
-             }
-
+                {
+                JavaScriptInterView.map((curelem)=>{          
+                   return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                 })
+               }
              </div>
         </div>
 
-
         <div className='PDF_BASICS'>
-        <h4 className='mt-5'>Python Programming Basics for Beginners</h4>
+          <h4 className='mt-5'>Python Programming Basics for Beginners</h4>
              <div>
-
              {
               JavaScriptSyllabus.map((curelem)=>{
-              
                 return (   <h5 className='my-4' key={curelem.id}>👉 Interview {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
               })
              }
-              
              </div>
-        </div>
+         </div>
+         
        </div>
     </div>
     </div>

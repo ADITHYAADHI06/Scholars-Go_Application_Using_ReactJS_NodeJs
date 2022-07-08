@@ -1,22 +1,17 @@
 .max_width{
-    max-width: 720px;
-  }
+         max-width: 720px;}
 
-  .Matrial{
-       display: inline-block;
-  }
-  .Matrials a{
-    text-decoration: none;
-    padding: 0 5px;
-  }
- .Matrials a:hover{
-background-color: yellow;
-}
+.Matrial{
+        display: inline-block;}
+        
+.Matrials a{
+        text-decoration: none;
+        padding: 0 5px;
+        transition: all .5s,color 1s;}
+
+.Matrials a:hover{
+        letter-spacing: 0.3px;}
 
 .Main_heading{
-  font-size: 38px;
-}
-/* .Hand{
-  font-size: 200px;
-} */
+       font-size: 38px;}
 

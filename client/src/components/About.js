@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from "react";
 import profile_pic from "./images/profile_pic.jpeg";
-import d_Userpic from "./images/D_userPic.jpg";
+import Default_Userpic from "./images/Default_userPic.jpg";
 
 import { useNavigate } from "react-router-dom";
 
@@ -12,21 +12,21 @@ const About = () => {
   const callAboutPage = async () => {
     try {
       const res = await fetch("/getData", {
-        method: "GET",
-        headers: {
-          // to set that application should accept json
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-        // we are writing include because the cookie has to send to backend
-        //  properly so that we are using that
-      });
+                  method: "GET",
+                  headers: {
+                    // to set that application should accept json
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                  },
+                  credentials: "include",
+                  // we are writing include because the cookie has to send to backend
+                  //  properly so that we are using that
+         });
       //  we get the res
 
-      const data = await res.json();
+       const data = await res.json();
             // console.log(res);
-      setUserData(data);
+       setUserData(data);
     } catch (e) {
       console.log(e);
       navigate("/Login");
@@ -34,7 +34,7 @@ const About = () => {
   };
 
   useEffect(() => {
-    callAboutPage();
+      callAboutPage();
   }, []);
 
   return (
@@ -43,7 +43,7 @@ const About = () => {
         <form method="GET">
           <div className="row user-profile margin p-5">
             <div className="col-md-5 ps-0">
-              <img src= {userData.name==="ADITHYA SHETTY"? profile_pic:d_Userpic} className="user_img" alt="" />
+              <img src= {userData.name==="ADITHYA SHETTY"? profile_pic:Default_Userpic} className="user_img" alt="" />
             </div>
             <div className="col-md-6">
               <div className="profile-head">
@@ -59,14 +59,12 @@ const About = () => {
                   <div className="Data">
                     <div className="row">
                       <div className="col-md-5">
-                        <p>User id :</p>
                         <p>Name :</p>
                         <p>Email :</p>
                         <p>Profession :</p>
                         <p>Phone number :</p>
                       </div>
                       <div className="col-md-6">
-                        <p>{userData._id}</p>
                         <p>{userData.name}</p>
                         <p>{userData.email}</p>
                         <p>{userData.work}</p>
@@ -77,9 +75,7 @@ const About = () => {
                 </div>
               </div>
             </div>
-            {/* <div className="col-md-2 ">
-              <span className="badge rounded-5 bg-success ms-5 py-2">User</span>
-            </div> */}
+      
           </div>
         </form>
       </div>

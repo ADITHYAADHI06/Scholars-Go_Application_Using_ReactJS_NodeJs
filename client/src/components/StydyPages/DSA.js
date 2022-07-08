@@ -17,37 +17,29 @@ const DSA = () => {
         <div className='row justify-content-between mx-3'>
              {
               DSA_concepts_wise.map((curelem)=>{
-              
                 return (<div className='col-11 col-md-5'>
                    <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a></h5>
                    </div>
                     );
-              })
+                    })
              }
-
              </div>
         </div>
-
 
         <div className='PDF_Full_course'>
         <h3 className='mt-5 mb-4'>Data structures and Algorithms Full Course [PDF]</h3>
              <div>
-             {
-              DSA_full_pdfs.map((curelem)=>{
-              
-                return (   <h5 className='my-4 mx-4' key={curelem.id}>👉 Full Course {curelem.id} <a href={curelem.url}>{curelem.name}</a></h5> );
-              })
-             }
-
-             </div>
+                {
+                  DSA_full_pdfs.map((curelem)=>{       
+                      return (   <h5 className='my-4 mx-4' key={curelem.id}>👉 Full Course {curelem.id} <a href={curelem.url}>{curelem.name}</a></h5> );
+                        })
+                 }
         </div>
-
-
-      
-       </div>
-    </div>
-    </div>
-    </>
+       </div>  
+      </div>
+  </div>
+</div>
+</>
   )
 }
 

@@ -2,21 +2,17 @@
   width: 100% !important;
   height: 450px !important;
   border-radius: 12px !important;
-}
+  transition: all .4s ease-in-out;}
+  
+.card:hover{
+  box-shadow: 1px 2px 15px 0px rgba(0,0,0,0.51);
+  -webkit-box-shadow: 1px 2px 15px 0px rgba(0,0,0,0.51);
+  -moz-box-shadow: 1px 2px 15px 0px rgba(0,0,0,0.51);}
 
 .card img{
-
   min-height: 150px;
- min-height: 250px;
-border-top-left-radius:12px ;
-border-top-right-radius:12px ;
-
-}
+  min-height: 250px;
+  border-top-left-radius:12px ;
+  border-top-right-radius:12px ;}
 
 
-/* .card-title{
-  display: inline;
-}
-.badge{
-  float:right;
-} */

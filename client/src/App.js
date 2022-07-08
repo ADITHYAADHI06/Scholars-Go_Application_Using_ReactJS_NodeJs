@@ -1,5 +1,4 @@
 import "./App.css";
-// import "./node_modules/bootstarp/dist/css/bootstrap.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
@@ -32,6 +31,7 @@ export const UserContext=createContext();
         <Route path="/about" element={<About />}></Route>
 
         <Route path="/study" element={<Study />}></Route>
+        
         <Route path="/contact" element={<Contact />}></Route>
 
         <Route path="/login" element={<Login />}></Route>
@@ -54,15 +54,16 @@ export const UserContext=createContext();
 }
 
 function App() {
+  
   const [state, dispatch] = useReducer(reducer, initialState);
   // Todo: With the help of UseContext we call dispacth, when ever dispacth get called , in reducer action get trigered according to action we get playload
 
   return (
     <>
-    <UserContext.Provider value={{state,dispatch}}>
-      <Navbar />
-      <Routing />
-   </UserContext.Provider>
+      <UserContext.Provider value={{state,dispatch}}>
+        <Navbar />
+        <Routing />
+      </UserContext.Provider>
     </>
   );
 }
