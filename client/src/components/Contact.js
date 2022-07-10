@@ -1,9 +1,11 @@
 import React,{useState,useEffect} from "react";
 import "../App.css";
 import Contactitem from "./Contactitem";
+import { useForm, ValidationError } from '@formspree/react';
+import ContactPage from "./Contact";
 
 const Contact = () => {
-
+ 
   const [userData, setUserData] = useState({name:"", email:"",phone:"",message:""});
 
      const getingContactData = async () => {
@@ -28,8 +30,7 @@ const Contact = () => {
     useEffect(() => {
       getingContactData();
      }, []);
-
-
+   
     const inputHandlers=(e)=>{
           const name= e.target.name;
           const value= e.target.value;
@@ -37,38 +38,45 @@ const Contact = () => {
       }
 
 //  Sending the Data to backEnd 
-   const SendMessage= async(e)=>{
-         const {  name,email,phone,message }=userData;
-                  e.preventDefault();
+  //  const SendMessage= async(e)=>{
+  //        const {  name,email,phone,message }=userData;
+  //                 e.preventDefault();
          
-           const res =await fetch("/contact",{
-                        method:"POST",
-                        headers:{
-                          "Content-Type":"application/json"
-                        },
-                        body: JSON.stringify({
-                              name,email,phone,message
-                        })
-                })
+  //          const res =await fetch("/contact",{
+  //                       method:"POST",
+  //                       headers:{
+  //                         "Content-Type":"application/json"
+  //                       },
+  //                       body: JSON.stringify({
+  //                             name,email,phone,message
+  //                       })
+  //               })
 
-          const data=await res.json();
+  //         const data=await res.json();
 
-          if(!data){
-                console.log("Message not Send");
-          }else{
-                alert("message Sent");
-                setUserData({...userData, message:""});
-          }
-   }
+  //         if(!data){
+  //               console.log("Message not Send");
+  //         }else{
+  //               alert("message Sent");
+  //               setUserData({...userData, message:""});
+  //         }
+  //  }
 
-      // console.log(userData);
+  const [state, handleSubmit] = useForm("xbjwvzkb");
+  if (state.succeeded) {
+    window.alert("Msg sent");
+      return(
+        <ContactPage />
+      );
+  }
+
   return (
     <div className="Contact">
       <div className="container-fluid ">
         {/* Dev-Contact-Row start */}
 
            <div className="row mt-5 d-flex justify-content-center">
-            <div className="col-10  ">
+            <div className="col-11 col-sm-10  ">
                <div className="row d-flex justify-content-center align-items-center">
                  {/* Dev-Contact-Item-1 start */}
                       <Contactitem
@@ -94,14 +102,14 @@ const Contact = () => {
       {/* User-Contact-Section Start */}
 
         <div className="row my-5 d-flex justify-content-center">
-          <div className="col-7 pt-4 pb-4 px-5 rounded  contact-info-form">
+          <div className="col-10 col-md-7 px-4 py-3 pt-md-4 pb-md-4 px-md-5 rounded  contact-info-form">
             <h2>Get In Touch</h2>
 
-            <form method="POST">
-              <div className="d-flex mt-4  justify-content-between">
+            <form onSubmit={handleSubmit} >
+              <div className=" d-sm-flex mt-4 justify-content-between">
                    <input
                      type="text"
-                     className="form-control me-2"
+                     className="form-control mb-3 mb-sm-0 me-sm-2"
                      id="exampleInputName"
                      aria-describedby="NameHelp"
                      onChange={inputHandlers}
@@ -110,7 +118,7 @@ const Contact = () => {
                      placeholder="Your Name"/>
                    <input
                      type="email"
-                     className="form-control me-2"
+                     className="form-control mb-3 mb-sm-0 me-sm-2"
                      id="exampleInputEmail1"
                      aria-describedby="emailHelp"
                      onChange={inputHandlers}
@@ -138,12 +146,16 @@ const Contact = () => {
                      rows={6}/>
               </div>
 
-               <button type="submit" onClick={SendMessage} className="btn btn-dark mt-4">
+               <button type="submit" disabled={state.submitting}  className="btn btn-dark mt-4">
                    Submit
                </button>
            </form>
          </div>
        </div>
+
+
+
+
      </div>
     </div>
   );

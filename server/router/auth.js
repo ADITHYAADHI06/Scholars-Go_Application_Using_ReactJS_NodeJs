@@ -46,10 +46,11 @@ router.post("/register", async (req, res) => {
   try {
     const { name, email, phone, work, password, cpassword } = req.body;
 
+  
     if (!name || !email || !phone || !work || !password || !cpassword) {
       return res.send("fill out fully");
     }
-
+       
     const checkUserExist = await User.findOne({ email: email });
 
     if (checkUserExist) {
@@ -72,7 +73,7 @@ router.post("/register", async (req, res) => {
       }
     }
   } catch (error) {
-    console.log(error);
+    console.log(error +"error while registering");
   }
 });
 
@@ -134,33 +135,33 @@ router.get("/getData", authenticate, (req, res) => {
 
 
 
-router.post("/contact", authenticate, async(req, res) => {
-           try {
+// router.post("/contact", authenticate, async(req, res) => {
+//            try {
 
-               const {name,email,phone,message}=req.body;
+//                const {name,email,phone,message}=req.body;
 
-               if(!name || !email || !phone || !message){
-                          console.log("error in contact form");
-                          return res.json({error: "fill the contact form"})
-                          }
+//                if(!name || !email || !phone || !message){
+//                           console.log("error in contact form");
+//                           return res.json({error: "fill the contact form"})
+//                           }
 
-               const userContact=await User.findOne({_id:req.UserId});
+//                const userContact=await User.findOne({_id:req.UserId});
             
-               if(userContact){
+//                if(userContact){
                          
-                  const userMessage= await userContact.addMessage(name,email,phone,message);
+//                   const userMessage= await userContact.addMessage(name,email,phone,message);
 
-                  await userContact.save();
+//                   await userContact.save();
                   
-                   res.status(201).json({message:"contact add successfull"});
+//                    res.status(201).json({message:"contact add successfull"});
 
-               }
+//                }
 
-           } catch (e) {
-            console.log(e);
-            res.json({error:"message not sent"})
-           }           
+//            } catch (e) {
+//             console.log(e);
+//             res.json({error:"message not sent"})
+//            }           
 
-});
+// });
 
 module.exports = router;

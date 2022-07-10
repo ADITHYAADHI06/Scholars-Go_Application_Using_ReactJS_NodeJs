@@ -16,7 +16,13 @@
 .nav-link {
           color: #bfbfbf !important;
           margin-left: 15px;
-          letter-spacing: 2px; }
+          letter-spacing: 2px;  
+       }
+       .nav-link:hover{
+            color: #bc4f0bb3 !important;
+       }
+
+     
 
 .Navbr{
           box-shadow: -1px 9px 4px -4px rgba(0,0,0,0.47);
@@ -27,23 +33,20 @@
 /* ======================
  REGISTER PAGE
 ========================= */
-.conatin{
-        width: 100%;
-        display:flex;
-        justify-content:center;
-        align-items:center;}
+
 
 .signup-box{
           background-color: white;
           border-radius: 50px;
           box-shadow: 6px 5px 10px 3px #262626cd !important;}
 
-.signup-box img{
-          width: 220px;
-          object-fit: contain;}
+/* .signup-box img{
+          width: 100%;
+          object-fit: contain;} */
 
-.formGroup{
-          display: flex;}
+/* .formGroup{
+          display: flex;
+       } */
 
 .icon{
           padding-top: 5px;}
@@ -63,8 +66,31 @@ input:focus , input:active {
           outline: none !important;}
 
 .icon{
-          font-size: 10px !important;}
+          font-size: 10px !important;
+          margin-right: 10px;  
+       }
 
+
+       textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {   
+  border-color: rgba(104, 180, 239, 0.8);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(104, 207, 239, 0.6);
+  outline: 0 none;
+}
 .btn1 {
           background: #3cb1ff !important;
           background-image: -webkit-linear-gradient(top, #3da7ee, #1996ea) !important ;
@@ -89,6 +115,7 @@ input:focus , input:active {
           background-image: linear-gradient(to bottom, #3cb0fd, #3498db) !important ;
           text-decoration: none !important ;}
 
+        
 /* ======================
       CONTACT PAGE
 ========================= */
@@ -98,6 +125,7 @@ input:focus , input:active {
           -webkit-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
           -moz-box-shadow: 3px 3px 14px -1px rgba(166,166,166,0.75);
           font-size: 15px;
+          width: 100%;
           border-radius: 20px;
           padding: 10px 12px;
           color: rgb(0, 0, 0);}
@@ -169,4 +197,109 @@ input:focus , input:active {
           padding: 12px 25px 12px 25px !important ;
           text-decoration: none !important ;
           border: none !important;}
+
+
+
+
+          @media only screen and (max-width: 800px) {
+           
+           .navbar{             
+              background: linear-gradient(115deg, #000000 0%, #00C508 55%, #000000 100%), linear-gradient(115deg, #0057FF 0%, #020077 100%), conic-gradient(from 110deg at -5% 35%, #000000 0deg, #FAFF00 360deg), conic-gradient(from 220deg at 30% 30%, #FF0000 0deg, #0000FF 220deg, #240060 360deg), conic-gradient(from 235deg at 60% 35%, #0089D7 0deg, #0000FF 180deg, #240060 360deg);
+              background-blend-mode: soft-light, soft-light, overlay, screen, normal;}
+
+           .collapser{
+              width: 100%;
+              border-radius: 30px;
+              background-color: #EAF6F6!important;}
+
+            .nav-link {
+              font-weight: 700;
+              color: #262626 !important;}
+
+            .About p{
+              font-size: 12px;}
+              .login-sm-img{
+                     height: 250px !important;
+              }
+              .signup-box{
+                     background-color: white;
+                     border-radius: 20px;
+                     box-shadow: 6px 5px 10px 3px #262626cd !important;
+              }
+              .btn1 {
+                     background: #3cb1ff !important;
+                     background-image: -webkit-linear-gradient(top, #3da7ee, #1996ea) !important ;
+                     background-image: -moz-linear-gradient(top, #3498db, #2980b9) !important ;
+                     background-image: -o-linear-gradient(top, #3498db, #2980b9) !important ;
+                     background-image: linear-gradient(to bottom, #3498db, #2980b9) !important ;
+                     -webkit-border-radius: 5 !important ;
+                     -moz-border-radius: 5 !important ;
+                     border-radius: 5px !important ;
+                     font-family: Arial !important ;
+                     color: #f2f2f2 !important ;
+                     font-size: 13px !important ;
+                     padding:6px 13px 6px 13px !important ;
+                     text-decoration: none !important ;
+                     width: 100%;
+                     border: none !important;}
+           
+           .btn1:hover {
+                     background: #3cb0fd !important ;
+                     background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db) !important ;
+                     background-image: -moz-linear-gradient(top, #3cb0fd, #3498db) !important ;
+                     background-image: -o-linear-gradient(top, #3cb0fd, #3498db) !important ;
+                     background-image: linear-gradient(to bottom, #3cb0fd, #3498db) !important ;
+                     text-decoration: none !important ;}
+                     .icon{
+                            padding-bottom:0 !important ;
+                            margin-top: 4px !important;
+       
+                            }
+
+       }
+
+       @media only screen and (max-width: 800px) {
+
+      
+    }
+
+       @media only screen and (max-width: 400px) {
+
+                   .Data{
+                       margin-left: 10px !important;}
+                       .login-sm-img{
+                            height: 200px !important;
+                     }
+                    .NewAccount {
+                            font-size: 13px !important;
+                     }
+                     .p_x-0{
+                        padding-left: 0 !important;
+                        padding-right: 0 !important;
+                     }
+                    
+       }
+
+       @media only screen and (max-width: 365px) {
+
+            .contact-info-content{
+              font-size: 14px;}
+
+            .contact-info_item img {
+                      width: 45px; }
+       }
+
+       @media only screen and (max-width: 332px) {
+
+              .contact-info-content{
+                font-size: 14px;}
   
+              .contact-info_item img {
+                        width: 45px; }
+              .t-300{
+                     font-size: 12px;
+                     }
+            
+         }
+    
+

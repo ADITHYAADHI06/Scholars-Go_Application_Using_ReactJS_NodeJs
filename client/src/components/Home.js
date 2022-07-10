@@ -55,7 +55,7 @@ const Home = () => {
   return (
     <div style={myStyle}>
 
-           <div className="Home row px-0 mx-0 ms-5">
+           <div className="Home row px-0 mx-0 ms-3 ms-md-5">
                    <div className="col-10 col-md-8  ">
                         <h1>{ !userData.name ? `Scholars Go` :`Welcome ${userData.name}`}</h1>
                         <p>{ !userData.name ? `Everything you need to crack your next Interview.You get the access to all type of premium And free contents, Placements materials, guides and more` :  `Hi\u00A0${userData.name}\u00A0, Supercharge your reading experience .In this platfrom You geting the access to all type of premium And free content` }</p>
@@ -70,64 +70,64 @@ const Home = () => {
            </div>
 
 
-           <div className="row px-0 mx-0 ms-5 d-flex justify-content-md-start">
-                   <div className="col-3 pe-0">
+           <div className="row px-0 mx-0 ms-md-5 d-flex justify-content-center justify-content-md-start">
+                   <div className="col-12 col-md-3 d-flex justify-content-center justify-content-md-start ms-0 pe-0">
                        <img src={HeroImg} className="img-fluid heroImg" alt="heroimg"></img>
                    </div>
 
-                  <div className="col-5 Home_Card mt-4">
+                  <div className="col-12 col-md-5 Home_Card mt-4">
                            <p className="mt-0 mb-3 ">Get Access :</p>
-                      <div className="row ">
+                      <div className="row d-flex justify-content-center  justify-content-md-start">
 
-                        <div className="col-5">
+                        <div className="col-9 col-sm-8 col-md-5 m-0 mb-3 mb-md-0 p-0  flex-column">
 
-                            <NavLink to="/study/Python"  className="row Home_cards mb-3 flex-row">
+                            <NavLink to="/signup"  className="row Home_cards mb-3 mx-0 me-md-1 flex-row">
                                 <div className="col-3 m-0 p-0 left float-left">
-                                     <img src={PYTHON_HOME_ICON} className="img-fluid home_course_icons"  alt="heroimg"></img>
+                                     <img src={PYTHON_HOME_ICON} className="img-fluid  home_course_icons"  alt="heroimg"></img>
                                 </div>
-                                <div className="col-5 m-0 ms-3  p-0 right">Python</div>
+                                <div className="col-5 m-0 ms-3 ms-sm-5 ms-md-3 p-0 right">Python</div>
                             </NavLink>
 
-                            <NavLink to="/study/Java" className="row Home_cards mb-3 flex-row">
+                            <NavLink to="/signup" className="row Home_cards mb-3 mx-0 me-md-1 flex-row">
                                  <div className="col-3 m-0 p-0 left float-left">
                                      <img src={JAVA_HOME_ICON} className="img-fluid home_course_icons"  alt="heroimg"></img>
                                  </div>
-                                 <div className="col-5 m-0 ms-3  p-0 right">JAVA</div>
+                                 <div className="col-5 m-0 ms-3 ms-sm-5 ms-md-3  p-0 right">JAVA</div>
                             </NavLink>
 
-                            <NavLink to="/study/JavaScript" className="row Home_cards  flex-row">
+                            <NavLink to="/signup" className="row Home_cards mx-0 me-md-1   flex-row">
                                  <div className="col-3 m-0 p-0 left float-left">
                                      <img src={JAVASCRIPT_HOME_ICON} className="img-fluid home_course_icons"  alt="heroimg"></img>
                                  </div>
-                                 <div className="col-5 m-0 ms-3  p-0 right">JAVASCRIPT</div>
+                                 <div className="col-5 m-0 ms-3 ms-sm-5 ms-md-3 p-0 right">JAVASCRIPT</div>
                             </NavLink>
 
                         </div>
 
-                         <div className="col-5">
+                         <div className="col-9 col-sm-8 col-md-5 m-0 p-0 m-md-0 ms-md-2">
 
-                             <NavLink to="/study/Python"  className="row Home_cards mb-3 flex-row">
+                             <NavLink to="/signup"  className="row Home_cards mx-0  mb-3 flex-row">
                                  <div className="col-3 m-0  p-0 left float-left">
                                  <img src={Coding_HOME_ICON} className="img-fluid home_course_icons"  alt="heroimg"></img>
 
                                  </div>
-                                 <div className="col-5 m-0 ms-3 p-0 right">Coding</div>
+                                 <div className="col-5 m-0 ms-3  ms-sm-5 ms-md-3 p-0 right">Coding</div>
                              </NavLink>
 
-                            <NavLink to="/study/JavaScript" className="row Home_cards mb-3 flex-row">
+                            <NavLink to="/signup" className="row Home_cards mx-0  mb-3 flex-row">
                                   <div className="col-3 m-0 p-0 left float-left">
                                   <img src={CPlus_HOME_ICON} className="img-fluid home_course_icons"  alt="heroimg"></img>
 
                                   </div>
-                                  <div className="col-5 m-0 ms-3 p-0 right">C++</div>
+                                  <div className="col-5 m-0 ms-3  ms-sm-5 ms-md-3 p-0 right">C++</div>
                             </NavLink>
 
-                            <NavLink to="/study/Java" className="row Home_cards  flex-row">
+                            <NavLink to="/signup" className="row Home_cards mx-0   flex-row">
                                    <div className="col-3 m-0 p-0 left float-left">
                                    <img src={DSA_HOME_ICON} className="img-fluid home_course_icons"  alt="heroimg"></img>
 
                                    </div>
-                                   <div className="col-5 m-0 ms-3 p-0 right">DSA</div>
+                                   <div className="col-5 m-0 ms-3  ms-sm-5 ms-md-3 p-0 right">DSA</div>
                             </NavLink>
                       
                          </div>

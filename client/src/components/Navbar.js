@@ -38,7 +38,7 @@ function Navbar() {
         return(
          <>
             <li className="nav-item">
-              <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
+              <NavLink className="nav-link active " aria-current="page" to="/">Home</NavLink>
             </li>
 
             <li className="nav-item">
@@ -69,7 +69,7 @@ function Navbar() {
   return (
     <div className="Navbar">
         <nav className="navbar navbar-expand-lg py-2  navbar-light  bg-transperent Navbr">
-            <div className="container-fluid">
+            <div className="container-fluid ">
                 <NavLink className="navbar-brand p-0" to="#">
                   <img src={logo} className="ms-4 logo" alt="logo" />
                 </NavLink>
@@ -77,7 +77,7 @@ function Navbar() {
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <ul className="navbar-nav collapser text-dark ms-auto p-3 p-md-0  my-3 my-md-0 mb-lg-0">
                    <NavbarToggle />
                   </ul>
                 </div>

@@ -46,29 +46,25 @@ const Login = () => {
          }
   };
   return (
-    <div className="Login">
-      <div className="row conatin">
-               <div className="col-md-7 col-10  mt-md-5">
-                 <div className="signup-box p-md-5">
-                   <div className="row d-flex justify-content-between align-items-center">
-                 {/* Login-left-Side */}    
-                     <div className="col-md-5 text-center col-12">
-                              <figure>
-                                  <img src={signup} className=" " alt="signup" />
+    <div className="Login container-fluid">
+      <div className="row my-5 mt-md-0 d-flex justify-content-center">
+               <div className=" col-10  col-sm-8 col-md-7  mt-md-5">
+               <div className="row d-flex justify-content-around signup-box p-md-5">
+                 <div className="col-10  col-md-5 text-center ">
+                                <figure>
+                                  <img src={signup} className="img-fluid mt-4 mt-md-0 login-sm-img" alt="signup" />
                               </figure>
                               <NavLink
                                  to="/signup"
-                                 className="ms-md-4 text-dark text-center ">
+                                 className=" ms-md-4 NewAccount text-dark text-center ">
                                  Create an Account
                               </NavLink>
-                     </div>
-
-                 {/* Login-right-Side */}
-                      <div className="col-md-6 col-12">
-                        <h3 className="mb-3">SIGN IN</h3>
-                        <form method="POST">
-                          <div className="mb-2 formGroup">
-                            <label for="Email" className="icon">
+                 </div>
+                 <div className="col-10 col-md-5 py-3 p-sm-3 p_x-0 p-md-3 d-flex justify-content-center flex-column ">
+                 <h3 className="mb-3">SIGN IN</h3>
+                        <form method="POST" >
+                          <div className="mb-2 d-flex">
+                            <label htmlFor="Email" className="icon">
                               <EmailIcon />
                             </label>
                             <input
@@ -82,12 +78,12 @@ const Login = () => {
                               }}
                               id="exampleInputEmail1"
                               aria-describedby="emailHelp"
-                              placeholder="Your Email"
+                              placeholder="Your email"
                             />
                           </div>
 
-                          <div className="mb-2 formGroup">
-                            <label for="password" className="icon">
+                          <div className="mb-2 d-flex">
+                            <label htmlFor="Password" className="icon">
                               <LockIcon />
                             </label>
                             <input
@@ -115,9 +111,13 @@ const Login = () => {
                             />
                           </div>
                         </form>
-                      </div>
-            </div>
-          </div>
+                 </div>
+
+
+               </div>
+                
+
+
         </div>
       </div>
     </div>

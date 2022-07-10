@@ -75,3 +75,89 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div className="signup-box p-md-5">
+                   <div className="row d-flex justify-content-between align-items-center">
+                 {/* Login-left-Side */}    
+                     <div className="col-md-5 text-center col-12">
+                              <figure>
+                                  <img src={signup} className=" " alt="signup" />
+                              </figure>
+                              <NavLink
+                                 to="/signup"
+                                 className="ms-md-4 text-dark text-center ">
+                                 Create an Account
+                              </NavLink>
+                     </div>
+
+                 {/* Login-right-Side */}
+                      <div className="col-md-6 col-12">
+                        <h3 className="mb-3">SIGN IN</h3>
+                        <form method="POST">
+                          <div className="mb-2 formGroup">
+                            <label for="Email" className="icon">
+                              <EmailIcon />
+                            </label>
+                            <input
+                              type="email"
+                              className="form-control "
+                              value={email}
+                              name="email"
+                              onChange={(e) => {
+                                console.log(e.target.value);
+                                setEmail(e.target.value);
+                              }}
+                              id="exampleInputEmail1"
+                              aria-describedby="emailHelp"
+                              placeholder="Your Email"
+                            />
+                          </div>
+
+                          <div className="mb-2 formGroup">
+                            <label for="password" className="icon">
+                              <LockIcon />
+                            </label>
+                            <input
+                              type="password"
+                              name="password"
+                              value={password}
+                              onChange={(e) => {
+                                console.log(e.target.value);
+
+                                setPassword(e.target.value);
+                              }}
+                              className="form-control"
+                              id="exampleInputPassword1"
+                              placeholder="Password"
+                            />
+                          </div>
+
+                          <div className="mt-4">
+                            <input
+                              value="Log in"
+                              type="submit"
+                              name="submit"
+                              onClick={loginUser}
+                              className="ms-2 btn1"
+                            />
+                          </div>
+                        </form>
+
+
+                        
+                      </div>
+            </div>
+          </div>
