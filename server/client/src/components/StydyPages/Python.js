@@ -54,7 +54,8 @@ const Python = () => {
     <div className="row d-flex justify-content-center mx-auto mt-4 mb-3"> 
         <div className='col-12  col-md-11 '>
 
-                  <h2 className='my-2 mb-5 Main_heading'>Python Tutorial for Beginners: Learn Programming Basics</h2>
+                  <h2 className='my-2 mb-2 Main_heading'>Python Tutorial for Beginners: Learn Programming Basics</h2>
+                  <hr className='mb-5'></hr>
                   <h3 className='mb-3'>What is Python Programming Language?</h3>
                   <p className='max_width'>Python is an object-oriented programming language created by Guido Rossum in 1989. It is ideally designed for rapid prototyping of complex applications. It has interfaces to many OS system calls and libraries and is extensible to C or C++. Many large companies use the Python programming language, including NASA, Google, YouTube, BitTorrent, etc.</p>
                   <h3 className='mb-3 mt-5'>Python Syllabus</h3>
@@ -64,7 +65,7 @@ const Python = () => {
                        <div>
                          {
                             PythonInterView.map((curelem)=>{ 
-                            return (   <h5 className='my-4 Project_links' key={curelem.id}>👉 Interview {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+                            return (   <h5 className='my-4 Project_links' key={curelem.id}><span className='d-block d-sm-inline'>👉 Interview {curelem.id} </span><a href={curelem.url} target="_newtab">{curelem.name}</a><span className='d-none d-sm-inline'> — {curelem.discription}</span></h5> );
                              })
                          }
                        </div>
@@ -76,7 +77,7 @@ const Python = () => {
                        <div>
                          {
                             PythonSyllabus.map((curelem)=>{                        
-                               return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url} target="_blanck">{curelem.name}</a> — {curelem.discription}</h5> );
+                               return (   <h5 className='my-4' key={curelem.id}><span className='d-block d-sm-inline'>👉 Lesson {curelem.id}</span><a href={curelem.url} target="_newtab">{curelem.name}</a> <span className='d-none d-sm-inline'> — {curelem.discription}</span></h5> );
                             })
                          }             
                        </div>

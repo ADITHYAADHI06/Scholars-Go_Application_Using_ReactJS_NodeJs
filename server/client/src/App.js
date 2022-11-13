@@ -17,7 +17,7 @@ import JavaScript from "./components/StydyPages/JavaScript";
 import Logout from "./components/Logout";
 import { createContext, useReducer } from "react";
 import { initialState, reducer } from "./reducer/UseReducer";
-
+import Footer from "./components/StydyPages/Footer";
 
 
 //Todo: 1. ContextAPI
@@ -42,7 +42,7 @@ export const UserContext=createContext();
  
         <Route path="/study/Python" element={<Python />}></Route>
         <Route path="/study/JavaScript" element={<JavaScript />}></Route>
-        <Route path="/study/Interview_special" element={<InterView />}></Route>
+        <Route path="/study/Interview" element={<InterView />}></Route>
         <Route path="/study/Apptitude" element={<Apptitude />}></Route>
         <Route path="/study/Java" element={<Java />}></Route>
         <Route path="/study/DSA" element={<Dsa />}></Route>
@@ -63,6 +63,7 @@ function App() {
       <UserContext.Provider value={{state,dispatch}}>
         <Navbar />
         <Routing />
+        {/* <Footer /> */}
       </UserContext.Provider>
     </>
   );

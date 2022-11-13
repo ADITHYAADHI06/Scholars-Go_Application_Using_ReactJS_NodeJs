@@ -3,26 +3,27 @@
 
 .Home {
         text-align: left;
-        padding-top: 112px;
         color: rgba(255, 255, 255, 0.927);
-      }
-.heroImg
-      {
+}
+
+.heroImg {
         max-width: 250px;
         margin-top: 30px;
-        filter: drop-shadow(5px 5px 14px #FFFFFF); 
-       }
- 
-     h1{
+        filter: drop-shadow(5px 5px 14px #FFFFFF);
+}
+
+h1 {
         font-family: 'Bree Serif', serif;
-        font-size: 60px;}
+        font-size: 60px !important;
+}
 
-.Home p{
+.Home p {
         margin: 20px 0 30px 0;
-        color:#ffffffd5;
-        letter-spacing: 2px;}
+        color: #ffffffd5;
+        letter-spacing: 2px;
+}
 
-.Home .btn{
+.Home .btn {
         display: inline-block;
         background-color: transparent;
         border: 1px solid rgb(255, 255, 255);
@@ -33,39 +34,46 @@
         cursor: pointer;
         border-radius: 30px;
         transition: all 0.3s ease;
-        color: #e4e4e4f1;}
+        color: #e4e4e4f1;
+}
 
-.Study{
-         background-color: #f2f2f2; }
-  
+.Study {
+        background-color: #f2f2f2;
+}
+
 .btn a {
-        color: #e4e4e4f1;}
+        color: #e4e4e4f1;
+}
 
 .hireme-btn:hover {
         transform: translateY(-0.5rem);
-        color: rgba(83, 227, 237, 0.881);
-        border: 1px solid rgb(83, 227, 237);}
+        color: rgba(83, 227, 237, 0.881) !important;
+        border: 1px solid rgb(83, 227, 237);
+}
 
-.Home_cards{
+.Home_cards {
         text-decoration: none;
         background-color: #dcdcdc;
         color: black;
         width: 100%;
-        display:flex;
-        align-items:center;
+        display: flex;
+        align-items: center;
         border-radius: 20px;
         padding: 8px 15px;
-        transition: all .5s ease-in-out; }
+        transition: all .5s ease-in-out;
+}
 
-.Home_Card p{
-        color:#ffffffd5;}
+.Home_Card p {
+        color: #ffffffd5;
+}
 
-.Home_cards:hover{
+.Home_cards:hover {
         color: black;
-        -webkit-box-shadow: 1px 0px 13px 1px rgba(0,0,0,0.75);
-        -moz-box-shadow: 1px 0px 13px 1px rgba(0,0,0,0.75);
-        box-shadow: 1px 0px 13px 1px rgba(0,0,0,0.75);}
+        -webkit-box-shadow: 1px 0px 13px 1px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 1px 0px 13px 1px rgba(0, 0, 0, 0.75);
+        box-shadow: 1px 0px 13px 1px rgba(0, 0, 0, 0.75);
+}
 
-.home_course_icons{
-         height: 42px;}
-
+.home_course_icons {
+        height: 42px !important;
+}

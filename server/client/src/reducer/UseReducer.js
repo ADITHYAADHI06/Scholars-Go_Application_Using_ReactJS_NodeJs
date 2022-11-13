@@ -8,12 +8,6 @@ export const reducer=(state,action)=>{
 }
 
 
-
-
-
-
-
-
 // reducer method takes 2 arguments one is state, and another one is action
 
  

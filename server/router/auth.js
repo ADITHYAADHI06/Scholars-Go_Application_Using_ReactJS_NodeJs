@@ -8,7 +8,7 @@ require("../db/conn");
 const User = require("../model/userSchema");
 const { ConnectionStates } = require("mongoose");
 
-router.get("/", (req, res) => {});
+
 
 // ! promise
 // router.post("/register", (req, res) => {
@@ -46,11 +46,11 @@ router.post("/register", async (req, res) => {
   try {
     const { name, email, phone, work, password, cpassword } = req.body;
 
-  
+
     if (!name || !email || !phone || !work || !password || !cpassword) {
       return res.send("fill out fully");
     }
-       
+
     const checkUserExist = await User.findOne({ email: email });
 
     if (checkUserExist) {
@@ -60,7 +60,7 @@ router.post("/register", async (req, res) => {
     } else {
       const user = new User({ name, email, phone, work, password, cpassword });
 
-      console.log(user);
+      // console.log(user);
 
       //! middleWare pre("save",callback)
       const saveuser = await user.save();
@@ -73,7 +73,7 @@ router.post("/register", async (req, res) => {
       }
     }
   } catch (error) {
-    console.log(error +"error while registering");
+    console.log(error + "error while registering");
   }
 });
 
@@ -96,7 +96,7 @@ router.post("/signin", async (req, res) => {
       const token = await userLogin.generateAuthToken();
       // console.log(token);
       res.cookie("jwtoken", token, {
-        expires: new Date(Date.now() +  900000),
+        expires: new Date(Date.now() + 9000000),
         httpOnly: true,
       });
 
@@ -119,20 +119,39 @@ router.get("/about", authenticate, (req, res) => {
 
 // creating about Page
 router.get("/study", authenticate, (req, res) => {
-  res.send(req.rootUser);      
+  res.send(req.rootUser);
 });
 
 router.get("/logout", authenticate, (req, res) => {
   // after clearing the cookie navigate to home page
-  res.clearCookie("jwtoken",{path:"/"})
-  res.status(200).send('user logout');      
+  res.clearCookie("jwtoken", { path: "/" })
+  res.status(200).send('user logout');
 });
 
 router.get("/getData", authenticate, (req, res) => {
-  res.send(req.rootUser);      
+  res.send(req.rootUser);
 });
 
 
+router.get("/study/Apptitude", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+
+router.get("/study/Java", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+router.get("/study/Python", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+router.get("/study/Javascript", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+router.get("/study/Interview", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
+router.get("/study/Dsa", authenticate, (req, res) => {
+  res.send(req.rootUser);
+});
 
 
 // router.post("/contact", authenticate, async(req, res) => {
@@ -146,13 +165,13 @@ router.get("/getData", authenticate, (req, res) => {
 //                           }
 
 //                const userContact=await User.findOne({_id:req.UserId});
-            
+
 //                if(userContact){
-                         
+
 //                   const userMessage= await userContact.addMessage(name,email,phone,message);
 
 //                   await userContact.save();
-                  
+
 //                    res.status(201).json({message:"contact add successfull"});
 
 //                }

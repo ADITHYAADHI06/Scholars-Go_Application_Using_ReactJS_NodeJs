@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Matrial.css"
 
-const JavaSyllabus=[{
+const JavaScriptSyllabus=[{
       id:1,
       url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
       name:"Complete Python course",
@@ -21,9 +21,10 @@ const JavaSyllabus=[{
       url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
       name:"Questions With Answers",
         discription:"Complate Python Questions With Answers for Students.",
-      },]
+      },
+    ]
 
-const JavaInterView=[{
+const JavaScriptInterView=[{
       id:1,
       url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
       name:"Most Importent Interview Questions",
@@ -43,46 +44,47 @@ const JavaInterView=[{
       url:`https://drive.google.com/drive/folders/1satLafqxU6DuPhQxs91dy9QMChzsGjuh`,
       name:"Most Importent Interview Questions-3",
       discription:"Complate Python Questions With Answers",
-},]
+ },]
 
-const Python = () => {
+const JavaScript = () => {
   return (
     <> 
-    <div className="container-fluid Matrials">
-     <div className="row d-flex justify-content-center mx-auto mt-4 mb-3"> 
+     <div className="container-fluid Matrials">
+    <div className="row d-flex justify-content-center mx-auto mt-4 mb-3"> 
        <div className='col-12  col-md-11 '>
-         <h2 className='my-2 mb-5 Main_heading'>Java Tutorial for Beginners: Learn Core Java Programming</h2>
-         <h3 className='mb-3'>What is Java Language?</h3>
-         <p className='max_width'>Java is a class-based object-oriented programming language for building web and desktop applications. It is the most popular programming language and the language of choice for Android programming.</p>
-         <h3 className='mb-3 mt-5'>Java Syllabus</h3>
+        <h2 className='my-2 mb-2 Main_heading'>Python Tutorial for Beginners: Learn Programming Basics</h2>
+        <hr className='mb-5'></hr>
+        <h3 className='mb-3'>What is Python Programming Language?</h3>
+        <p className='max_width'>Python is an object-oriented programming language created by Guido Rossum in 1989. It is ideally designed for rapid prototyping of complex applications. It has interfaces to many OS system calls and libraries and is extensible to C or C++. Many large companies use the Python programming language, including NASA, Google, YouTube, BitTorrent, etc.</p>
+        <h3 className='mb-3 mt-5'>Python Syllabus</h3>
 
         <div className='PDF_InterView_perspective'>
-          <h4 className='mt-5'>Java Programming Interview Questions</h4>
+         <h4 className='mt-5'>Python Programming Interview Questions</h4>
              <div>
-             {
-              JavaInterView.map((curelem)=>{ 
-                return (   <h5 className='my-4' key={curelem.id}>👉 Interview {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
-              })
-             }
+                {
+                JavaScriptInterView.map((curelem)=>{          
+                   return (   <h5 className='my-4' key={curelem.id}><span className='d-block d-sm-inline'>👉 Lesson {curelem.id}</span> <a href={curelem.url} target="_newtab">{curelem.name}</a><span className='d-none d-sm-inline'> — {curelem.discription}</span></h5> );
+                 })
+               }
              </div>
         </div>
 
-
         <div className='PDF_BASICS'>
-          <h4 className='mt-5'>Java Programming Basics for Beginners</h4>
+          <h4 className='mt-5'>Python Programming Basics for Beginners</h4>
              <div>
              {
-              JavaSyllabus.map((curelem)=>{
-                return (   <h5 className='my-4' key={curelem.id}>👉 Lesson {curelem.id} <a href={curelem.url}>{curelem.name}</a> — {curelem.discription}</h5> );
+              JavaScriptSyllabus.map((curelem)=>{
+                return (   <h5 className='my-4' key={curelem.id}><span className='d-block d-sm-inline'>👉 Interview {curelem.id}</span><a href={curelem.url} target="_newtab">{curelem.name}</a><span className='d-none d-sm-inline'> — {curelem.discription}</span></h5> );
               })
              }
              </div>
          </div>
+         
        </div>
     </div>
-  </div>
+    </div>
     </>
   )
 }
 
-export default Python
+export default JavaScript

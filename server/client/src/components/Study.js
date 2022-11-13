@@ -20,7 +20,7 @@ const Study = () => {
             id:6,
             Name: "Interview Preparetions",
             img:InterViewBanner,
-            url:`/study/Interview_special`,
+            url:`/study/Interview`,
             des:"There are certain things you can do to properly prepare for an interview. Let's walk through them."
           },
    

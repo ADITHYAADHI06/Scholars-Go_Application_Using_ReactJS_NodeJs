@@ -38,7 +38,11 @@ app.get("/logout", (req, res) => {
   res.send("hi logout page");
 });
 
+if (process.env.NODE_ENV == "production") {
+  app.use(express.static("client/build"));
+}
+
 // ! create the server
 app.listen(PORT, () => {
-  console.log("server connected");
+  console.log(`${PORT} server connected `);
 });
