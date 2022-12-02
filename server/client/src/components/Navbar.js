@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import { NavLink } from "react-router-dom";
-import logo from "./images/Logo_MERNSTACK .png";
+import logo from "./images/Scholar_Go-2.png";
 import "../App.css"
 import { UserContext } from "../App"
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdClose } from 'react-icons/io';
 
 
 function Navbar() {
@@ -79,7 +80,7 @@ function Navbar() {
             <img src={logo} className="ms-4 logo" alt="logo" />
           </NavLink>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" onClick={() => { setOpenNav(!openNav) }} data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon ">{(openNav) ? null : <GiHamburgerMenu />}</span>
+            <span className="navbar-toggler-icon ">{(openNav) ? <IoMdClose className="closeIcon" /> : <GiHamburgerMenu className="OpenIcon" />}</span>
           </button>
           <div className="collapse  navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav collapser text-dark ms-auto p-3 p-md-0  my-3 my-md-0 mb-lg-0">

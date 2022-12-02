@@ -43,6 +43,8 @@ const Login = () => {
       // its like msg we are sending
       window.alert(" Login Successful ");
       navigate("/");
+
+
     }
   };
   return (

@@ -1,10 +1,22 @@
-export const initialState=null;
+
+
+let loginState =()=>{
+    let state=JSON.parse(localStorage.getItem("login"));
+    return state;
+}
+
+export let initialState=loginState();
 // we have assiged null to initialState but will chnage the value 
+
+
 export const reducer=(state,action)=>{
-   if (action.type==="USER") {
-       return action.payload;
-   }
-   return state;
+    switch(action.type)
+    {
+     case "USER": return state = action.payload;
+
+     default: return state;
+    }
+
 }
 
 

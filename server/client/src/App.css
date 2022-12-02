@@ -12,6 +12,7 @@
 ========================= */
 
 .Navbar {
+       /* padding: 2px; */
        box-shadow: -1px 9px 4px -4px rgba(0, 0, 0, 0.47);
        -webkit-box-shadow: -1px 9px 4px -4px rgba(0, 0, 0, 0.47);
        -moz-box-shadow: -1px 9px 4px -4px rgba(0, 0, 0, 0.47);
@@ -20,33 +21,32 @@
 }
 
 .navbar {
-       /* background-color: #0d102e; */
-       background-color: #11143d;
+       /* background-color: #11143d; */
+       background-color: #191d56;
 }
 
 .logo {
-       width: 130px;
+       margin: 2px;
+       width: 120px;
        filter: drop-shadow(5px 5px 14px #1a1919bb);
-       height: 55px;
+       height: 50px;
 }
 
 .nav-link {
        /* color: #bfbfbf !important; */
        color: rgb(253, 252, 252) !important;
        margin-left: 15px;
-       letter-spacing: 2px;
+       letter-spacing: 2.5px;
        /* font-family: cursive; */
        font-weight: 500;
        font-size: 0.9rem;
+
 }
 
 .nav-link:hover {
-
+       transition: transform .2s linear;
        color: rgba(83, 227, 237, 0.881) !important;
-       /* color: #bc4f0bb3 !important; */
-       /* transform: translateY(-0.5rem); */
-       /* border: 0.5px solid rgb(83, 227, 237); */
-       /* border-radius: 20px; */
+       transform: translateY(-0.2rem);
 }
 
 /* ======================
@@ -376,8 +376,18 @@ input[type="color"]:focus,
 }
 
 
-.navbar-toggler {
-       color: red;
+.OpenIcon {
+       color: #000000;
+       padding: 2px 4px;
+       font-size: 32px;
+       border: 1px solid rgb(0, 0, 0);
+}
+
+.closeIcon {
+       color: #000000;
+       padding: 2px 4px;
+       font-size: 32px;
+       border: 1px solid rgb(0, 0, 0);
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -385,6 +395,8 @@ input[type="color"]:focus,
 }
 
 /* .navbar-toggler-icon {
-       color: #00C508;
-       border: 1px solid red;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       border: 1.5px solid rgb(0, 0, 0);
 } */
