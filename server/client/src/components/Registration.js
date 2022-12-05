@@ -15,13 +15,13 @@ const Registration = () => {
   const navigate = useNavigate();
 
   const [user, setuser] = useState({
-         name: "",
-         email: "",
-         phone: "",
-         work: "",
-         password: "",
-         cpassword: "",
-    });
+    name: "",
+    email: "",
+    phone: "",
+    work: "",
+    password: "",
+    cpassword: "",
+  });
 
   let name, value;
   const inputHandlers = (e) => {
@@ -33,39 +33,39 @@ const Registration = () => {
 
   //! we are sending data to Register route....
   const POSTDATA = async (e) => {
-        e.preventDefault();
-        const { name, email, phone, work, password, cpassword } = user;
+    e.preventDefault();
+    const { name, email, phone, work, password, cpassword } = user;
 
-        // our front is working on port number 3000 and backend on 4000
-        // in this we are trying to send the data to register route frist
-        // it will look for register route in client  after it will look in
-        // defined proxy addres in pakage.json file.
-        
-        const res = await fetch("/register", {
-                    method: "POST",
-                    headers: {
-                            "Content-Type": "application/json",
-                            },
-           // {"name":"test","email":"test1@gmail.com","phone":"123","work":"wev","password":"123","cpassword":"123"}
-                    body: JSON.stringify({
-                             name: name,
-                             email: email,
-                             phone: phone,
-                             work: work,
-                             password: password,
-                             cpassword: cpassword,
-                                        }),
-               });
+    // our front is working on port number 3000 and backend on 4000
+    // in this we are trying to send the data to register route frist
+    // it will look for register route in client  after it will look in
+    // defined proxy addres in pakage.json file.
+
+    const res = await fetch("/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      // {"name":"test","email":"test1@gmail.com","phone":"123","work":"wev","password":"123","cpassword":"123"}
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        phone: phone,
+        work: work,
+        password: password,
+        cpassword: cpassword,
+      }),
+    });
 
 
     const data = await res.json();
 
     if (data.status === 422 || !data) {
-               window.alert("invalid registration");
-               console.log("invalid registration");
+      window.alert("invalid registration");
+      //  console.log("invalid registration");
     } else {
-               window.alert(" registration successfull u can login");
-               console.log(" registration success");
+      window.alert(" registration successfull u can login");
+      //  console.log(" registration success");
 
       // https://create-react-app.dev/docs/proxying-api-requests-in-development/
       // we need set the procxy sever to backend

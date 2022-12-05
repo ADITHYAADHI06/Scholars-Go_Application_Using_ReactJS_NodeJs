@@ -12,7 +12,7 @@ function Navbar() {
   const { state, dispatch } = useContext(UserContext);
 
   const [openNav, setOpenNav] = useState(false);
-  console.log(openNav);
+  // console.log(openNav);
 
   const NavbarToggle = () => {
 

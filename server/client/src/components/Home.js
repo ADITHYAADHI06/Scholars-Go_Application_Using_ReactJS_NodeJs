@@ -72,7 +72,7 @@ const Home = () => {
 
       const data = await res.json();
 
-      console.log(data);
+      // console.log(data);
       if (data) {
         console.log(e.target.outerText);
         navigate(`/study/${e.target.outerText}`);
@@ -106,7 +106,7 @@ const Home = () => {
           <img src={HeroImg} className="img-fluid heroImg" alt="heroimg"></img>
         </div>
 
-        <div className="col-12 col-md-5 Home_Card mt-4">
+        <div className="col-12 col-md-5 Home_Card">
           <p className="mt-0 mb-3 ">Get Access :</p>
           <div className="row d-flex justify-content-center  justify-content-md-start">
 

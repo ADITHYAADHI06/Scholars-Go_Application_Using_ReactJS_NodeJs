@@ -58,7 +58,7 @@ function App() {
 
   const [state, dispatch] = useReducer(reducer, initialState);
   // Todo: With the help of UseContext we call dispacth, when ever dispacth get called , in reducer action get trigered according to action we get playload
-  console.log(`state ${state}`);
+  // console.log(`state ${state}`);
 
   useEffect(() => {
     localStorage.setItem("login", JSON.stringify(state));

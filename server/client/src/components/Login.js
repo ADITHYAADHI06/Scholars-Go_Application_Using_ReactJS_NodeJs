@@ -75,7 +75,7 @@ const Login = () => {
                     value={email}
                     name="email"
                     onChange={(e) => {
-                      console.log(e.target.value);
+                      // console.log(e.target.value);
                       setEmail(e.target.value);
                     }}
                     id="exampleInputEmail1"
@@ -93,7 +93,7 @@ const Login = () => {
                     name="password"
                     value={password}
                     onChange={(e) => {
-                      console.log(e.target.value);
+                      // console.log(e.target.value);
 
                       setPassword(e.target.value);
                     }}
